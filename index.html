@@ -39,15 +39,15 @@
     <!-- end navbar -->
 
     <!-- header -->
-    <div id="home" class="container-fluid">
-        <h1 class="headline-text">Healthy Tablets and Medicine</h1>
-        <img src="img\Rectangle 1 (1).png" alt="image header">
+    <div id="home" class="box">
+        <h1 class="headline-text object">Healthy Tablets and Medicine</h1>
+        <img src="img\Rectangle 1 (1).png" data-value="2" alt="image header">
     </div>
     <!-- end header -->
 
     <!-- specialize -->
-    <div class="container-fluid" style="background-color: rgba(0, 82, 93);">
-        <div id="specialize" class="container-fluid">
+    <div class="box" style="background-color: rgba(0, 82, 93); width: 100%;">
+        <div id="specialize" class="box">
         <p class="text"><img src="img\Vector 2.png" alt="">Our Specialize<img src="img\Vector 2.png" alt=""></p>
         <div class="row">
             <div class="col">
@@ -82,9 +82,9 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div id="left" class="row">~~
+                    <div id="left" class="row">
                         <div class="col">
-                            <div class="container"></div>
+                            <div class="box"></div>
                             <h2>VISION</h2>
                             <p>We are inspired in serving and supporting our customer to
                             provide the best raw material as well as finished formulation
@@ -96,7 +96,7 @@
                 <div class="carousel-item">
                     <div id="right" class="row">
                         <div class="col">
-                            <div class="container"></div>
+                            <div class="box"></div>
                             <h2>Mission</h2>
                             <p>In a market place, today it is greatest challenges,
                             we feel it is our task to assist our business partners-
@@ -111,9 +111,25 @@
     <!-- end visi & misi -->
 
 
-    
-</body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+    <script>
+        AOS.init();
+
+        document.addEventListener("mousemove", parallax);
+        function parallax(e) {
+            document.querySelectorAll(".object").forEach(function (move) {
+                var moving_value = move.getAttribute("data-value");
+                var x = (e.clientX * moving_value) / 100;
+                var y = (e.clientY * moving_value) / 100;
+
+                move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+
+            });
+        }
+    </script>
+</body>
+   
 </html>

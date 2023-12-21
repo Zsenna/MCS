@@ -3,11 +3,20 @@
   max-width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* navbar */
-.navbar #connav {
-  background-color: rgba(0, 82, 93);
+.navbar {
   width: 100%;
   height: 100%;
+}
+.navbar #connav {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(0, 82, 93);
   padding: 1em 0.5em;
 }
 
@@ -66,11 +75,9 @@
 
 /* specialize */
 #specialize {
-  max-width: 100%;
   width: 100%;
   height: 100%;
-  margin: 2em 0em;
-  padding: 0em 3em;
+  margin: 2em 0em 0em 0em;
   background-color: white;
   border-radius: 0 0 30px 30px;
 }
@@ -137,10 +144,19 @@
   height: auto;
 }
 
-#visimisi .container {
+#visimisi #left .box {
   background: rgba(255, 255, 255, 1);
   width: 5.875em;
   height: 0.438em;
+}
+#visimisi #right .box {
+  background: rgba(255, 255, 255, 1);
+  width: 5.875em;
+  height: 0.438em;
+  display: flex;
+  justify-content: end;
+  align-content: end;
+  text-align: end;
 }
 
 #visimisi h2 {
@@ -182,6 +198,7 @@
 #visimisi #right .col {
   display: flex;
   text-align: right;
+  align-items: end;
   flex-direction: column;
   justify-content: center;
   gap: 2.5em;
