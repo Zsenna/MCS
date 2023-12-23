@@ -15,7 +15,7 @@ html {
 .navbar #connav {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   background-color: rgba(0, 82, 93);
   padding: 1em 0.5em;
 }
@@ -52,12 +52,15 @@ html {
 }
 
 /* header */
-#home {
+#home1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
-#home .headline-text {
+#home1 .headline-text {
+  z-index: 1;
   font-family: "Montserrat";
   font-size: 58px;
   font-weight: 700;
@@ -68,7 +71,57 @@ html {
   color: rgba(255, 255, 255, 1);
 }
 
-#home img {
+#home1 img {
+  width: 100%;
+  height: 100%;
+}
+
+#carouselExampleIndicators {
+  width: 100%;
+  height: 100%;
+}
+
+#home2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#home2 .headline-text {
+  z-index: 1;
+  font-family: "Montserrat";
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 80px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: center;
+  position: absolute;
+  color: rgba(255, 255, 255, 1);
+}
+
+#home2 img {
+  width: 100%;
+  height: 100%;
+}
+
+#home3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#home3 .headline-text {
+  font-family: "Montserrat";
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 80px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: center;
+  position: absolute;
+  color: rgba(255, 255, 255, 1);
+}
+
+#home3 img {
   width: 100%;
   height: 100%;
 }
@@ -137,19 +190,19 @@ html {
   color: rgba(115, 115, 115, 1);
 }
 
-/* carousel */
-#visimisi {
+/* visimisi */
+#visimisi1 {
   padding: 3em 12em;
   width: 100%;
   height: auto;
 }
 
-#visimisi #left .box {
+#visimisi1 #left .box {
   background: rgba(255, 255, 255, 1);
   width: 5.875em;
   height: 0.438em;
 }
-#visimisi #right .box {
+#visimisi1 #right .box {
   background: rgba(255, 255, 255, 1);
   width: 5.875em;
   height: 0.438em;
@@ -159,7 +212,7 @@ html {
   text-align: end;
 }
 
-#visimisi h2 {
+#visimisi1 h2 {
   font-family: "Montserrat";
   font-size: 40px;
   font-weight: 700;
@@ -168,7 +221,7 @@ html {
   color: white;
 }
 
-#visimisi p {
+#visimisi1 p {
   font-family: "Montserrat";
   font-size: 14px;
   font-weight: 400;
@@ -177,12 +230,12 @@ html {
   color: white;
 }
 
-#visimisi #left {
+#visimisi1 #left {
   display: flex;
   flex-direction: row;
 }
 
-#visimisi #left .col {
+#visimisi1 #left .col {
   display: flex;
   text-align: left;
   flex-direction: column;
@@ -190,12 +243,12 @@ html {
   gap: 2.5em;
 }
 
-#visimisi #right {
+#visimisi1 #right {
   display: flex;
   flex-direction: row;
 }
 
-#visimisi #right .col {
+#visimisi1 #right .col {
   display: flex;
   text-align: right;
   align-items: end;
@@ -204,7 +257,78 @@ html {
   gap: 2.5em;
 }
 
-#visimisi img {
+#visimisi1 img {
+  width: 50%;
+  height: 10%;
+}
+
+#visimisi3 {
+  padding: 3em 12em;
+  width: 100%;
+  height: auto;
+}
+
+#visimisi3 #left .box {
+  background: rgba(255, 255, 255, 1);
+  width: 5.875em;
+  height: 0.438em;
+}
+#visimisi3 #right .box {
+  background: rgba(255, 255, 255, 1);
+  width: 5.875em;
+  height: 0.438em;
+  display: flex;
+  justify-content: end;
+  align-content: end;
+  text-align: end;
+}
+
+#visimisi3 h2 {
+  font-family: "Montserrat";
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: 0.20000000298023224px;
+  color: white;
+}
+
+#visimisi3 p {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.20000000298023224px;
+  color: white;
+}
+
+#visimisi3 #left {
+  display: flex;
+  flex-direction: row;
+}
+
+#visimisi3 #left .col {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5em;
+}
+
+#visimisi3 #right {
+  display: flex;
+  flex-direction: row;
+}
+
+#visimisi3 #right .col {
+  display: flex;
+  text-align: right;
+  align-items: end;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5em;
+}
+
+#visimisi3 img {
   width: 50%;
   height: 10%;
 }
@@ -222,6 +346,7 @@ html {
     padding: 0.2em 0.5em;
   }
 
+  /* navbar */
   .navbar img {
     width: 14%;
     height: 5vh;
@@ -264,12 +389,12 @@ html {
   }
 
   /* header */
-  #home {
+  #home1 {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  #home .headline-text {
+  #home1 .headline-text {
     font-family: "Montserrat";
     font-size: 20px;
     font-weight: 700;
@@ -280,7 +405,49 @@ html {
     color: rgba(255, 255, 255, 1);
   }
 
-  #home img {
+  #home2 img {
+    width: 100%;
+    height: 100%;
+  }
+
+  #home2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #home2 .headline-text {
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: center;
+    position: absolute;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  #home1 img {
+    width: 100%;
+    height: 100%;
+  }
+
+  #home3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #home3 .headline-text {
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: center;
+    position: absolute;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  #home3 img {
     width: 100%;
     height: 100%;
   }
@@ -361,19 +528,19 @@ html {
     color: rgba(115, 115, 115, 1);
   }
 
-  /* carousel */
-  #visimisi {
+  /* visimisi */
+  #visimisi1 {
     padding: 3em 2em;
     width: 100%;
     height: auto;
   }
 
-  #visimisi #left .box {
+  #visimisi1 #left .box {
     background: rgba(255, 255, 255, 1);
     width: 3.5em;
     height: 0.3em;
   }
-  #visimisi #right .box {
+  #visimisi1 #right .box {
     background: rgba(255, 255, 255, 1);
     width: 3.5em;
     height: 0.3em;
@@ -383,7 +550,7 @@ html {
     text-align: end;
   }
 
-  #visimisi h2 {
+  #visimisi1 h2 {
     font-family: "Montserrat";
     font-size: 20px;
     font-weight: 700;
@@ -392,7 +559,7 @@ html {
     color: white;
   }
 
-  #visimisi p {
+  #visimisi1 p {
     font-family: "Montserrat";
     font-size: 10px;
     font-weight: 400;
@@ -401,12 +568,12 @@ html {
     color: white;
   }
 
-  #visimisi #left {
+  #visimisi1 #left {
     display: flex;
     flex-direction: column-reverse;
   }
 
-  #visimisi #left .col {
+  #visimisi1 #left .col {
     margin-top: 1em;
     margin-bottom: 3em;
     display: flex;
@@ -416,12 +583,12 @@ html {
     gap: 0em;
   }
 
-  #visimisi #right {
+  #visimisi1 #right {
     display: flex;
     flex-direction: column-reverse;
   }
 
-  #visimisi #right .col {
+  #visimisi1 #right .col {
     margin-top: 1em;
     margin-bottom: 3em;
     display: flex;
@@ -432,7 +599,81 @@ html {
     gap: 0em;
   }
 
-  #visimisi img {
+  #visimisi1 img {
+    width: 50%;
+    height: 10%;
+  }
+  #visimisi3 {
+    padding: 3em 2em;
+    width: 100%;
+    height: auto;
+  }
+
+  #visimisi3 #left .box {
+    background: rgba(255, 255, 255, 1);
+    width: 3.5em;
+    height: 0.3em;
+  }
+  #visimisi3 #right .box {
+    background: rgba(255, 255, 255, 1);
+    width: 3.5em;
+    height: 0.3em;
+    display: flex;
+    justify-content: end;
+    align-content: end;
+    text-align: end;
+  }
+
+  #visimisi3 h2 {
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0.20000000298023224px;
+    color: white;
+  }
+
+  #visimisi3 p {
+    font-family: "Montserrat";
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.20000000298023224px;
+    color: white;
+  }
+
+  #visimisi3 #left {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #visimisi3 #left .col {
+    margin-top: 1em;
+    margin-bottom: 3em;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0em;
+  }
+
+  #visimisi3 #right {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #visimisi3 #right .col {
+    margin-top: 1em;
+    margin-bottom: 3em;
+    display: flex;
+    text-align: right;
+    align-items: end;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0em;
+  }
+
+  #visimisi3 img {
     width: 50%;
     height: 10%;
   }
