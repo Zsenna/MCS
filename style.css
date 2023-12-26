@@ -939,3 +939,221 @@ body {
     height: 10%;
   }
 }
+
+/* Products : */
+
+.products {
+  display: flex;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #00525D;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.fill-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+aside {
+  flex: 1;
+  max-width: 10%;
+  margin-left: 3vw;
+}
+
+main {
+  flex: 2;
+  max-width: 90%;
+  display: flex;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+
+}
+
+.navigationBtn {
+  margin: 5px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #00525D;
+}
+
+.content-fill {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 11px;
+}
+
+#tes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#pageControl {
+  display: flex;
+  width: 43px;
+  height: 16px;
+}
+
+/* Product Card : */
+
+.card-image {
+  width: 261px;
+  height: 225px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  position: relative;
+}
+
+.card-image {
+  background-image: url(img/rizki/productCard/product-cover.png);
+}
+
+.card-image #sale {
+  margin-top: 1vw;
+  margin-left: 0.5vw;
+  position: relative;
+}
+
+#title-image {
+  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #00525D;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+
+.card-image #drop {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.card-desc {
+  width: 261px;
+  height: 225px;
+  margin-top: 0;
+}
+
+.card-content {
+  margin-left: 3vw;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #F9995D;
+  size: 10.5px;
+}
+
+.description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #737373;
+}
+
+.sales {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #737373;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  border: 0;
+  color: #00525D;
+  box-shadow: 0 0 0 1px #00525D;
+  border-radius: 15px;
+}
+
+/* Footer : */
+
+.container-footer {
+  background-color: #00525D;
+}
+
+.image {
+  background-color: white;
+  width: 20%;
+  border-radius: 17px;
+  margin: 30px;
+  overflow: hidden;
+}
+
+.navigation {
+  width: 75%;
+  position: relative;
+}
+
+.main {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  color: #FFFFFF;
+  ;
+}
+
+.one {
+  color: #F9995D;
+  font-size: 16px;
+}
+
+.child {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  ;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+#mcsFooter {
+  width: 267px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#copyright {
+  margin-left: 5vw;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #00525D;
+  display: flex;
+}
