@@ -79,7 +79,7 @@ html {
   height: 100%;
 }
 
-#carouselExampleIndicators {
+#home1 #carouselExampleIndicators {
   width: 100%;
   height: 100%;
 }
@@ -104,6 +104,11 @@ html {
 }
 
 #home2 img {
+  width: 100%;
+  height: 100%;
+}
+
+#home2 #carouselExampleIndicators {
   width: 100%;
   height: 100%;
 }
@@ -341,27 +346,13 @@ html {
 }
 
 /* testimoni */
-html,
-body {
-  position: relative;
-  height: 100%;
-}
 
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
-.swiper {
+#testi .swiper {
   width: 100%;
   height: 100%;
 }
 
-.swiper-slide {
+#testi .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -370,14 +361,14 @@ body {
   align-items: center;
 }
 
-.swiper-slide img {
+#testi .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.container {
+#testi {
   background-color: #00525d;
   display: flex;
   flex-direction: row;
@@ -385,7 +376,7 @@ body {
   width: 100%;
 }
 
-.container .div {
+#testi .div {
   background-color: #00525d;
   overflow: hidden;
   width: 1050px;
@@ -393,7 +384,7 @@ body {
   position: relative;
 }
 
-.container .row {
+#testi .row {
   position: absolute;
   width: 1044px;
   height: 80px;
@@ -401,13 +392,13 @@ body {
   left: 3px;
 }
 
-.container .main-content {
+#testi .main-content {
   position: relative;
   width: 691px;
   height: 80px;
 }
 
-.container .section-title {
+#testi .section-title {
   position: absolute;
   width: 358px;
   top: -1px;
@@ -421,7 +412,7 @@ body {
   font-style: var(--h-2-font-style);
 }
 
-.container .paragraph {
+#testi .paragraph {
   position: absolute;
   top: 53px;
   left: 0;
@@ -435,7 +426,7 @@ body {
   font-style: var(--paragraph-font-style);
 }
 
-.container .row-2 {
+#testi .row-2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -445,7 +436,7 @@ body {
   left: 2px;
 }
 
-.container .col-md {
+#testi .col-md {
   display: flex;
   flex-direction: column;
   width: 328px;
@@ -453,7 +444,7 @@ body {
   position: relative;
 }
 
-.container .testimonials-card {
+#testi .testimonials-card {
   display: flex;
   flex-direction: column;
   width: 348px;
@@ -466,7 +457,7 @@ body {
   background-color: var(--light-background-color);
 }
 
-.container .card-content {
+#testi .card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -478,12 +469,12 @@ body {
   flex: 0 0 auto;
 }
 
-.container .stars {
+#testi .stars {
   position: relative;
   flex: 0 0 auto;
 }
 
-.container .text-wrapper {
+#testi .text-wrapper {
   position: relative;
   width: 159px;
   color: var(--second-text-color);
@@ -494,8 +485,7 @@ body {
   letter-spacing: 0.2px;
   line-height: 20px;
 }
-
-.container .div-2 {
+#testi .div-2 {
   height: 50px;
   align-items: center;
   gap: 15px;
@@ -503,7 +493,7 @@ body {
   position: relative;
 }
 
-.container .circle {
+#testi .circle {
   background-image: url(/img/testimonial-user-cover-202.png);
   position: relative;
   width: 50px;
@@ -512,7 +502,7 @@ body {
   background-position: 50% 50%;
 }
 
-.container .div-3 {
+#testi .div-3 {
   flex-direction: column;
   align-items: flex-start;
   flex: 0 0 auto;
@@ -520,7 +510,7 @@ body {
   position: relative;
 }
 
-.container .link {
+#testi .link {
   position: relative;
   width: fit-content;
   margin-top: -1px;
@@ -534,7 +524,7 @@ body {
   font-style: var(--h-6-font-style);
 }
 
-.container .h {
+#testi .h {
   position: relative;
   width: fit-content;
   font-family: var(--small-font-family);
@@ -547,7 +537,7 @@ body {
   font-style: var(--small-font-style);
 }
 
-.container .circle-2 {
+#testi .circle-2 {
   background-image: url(./img/testimonial-user-cover-99.png);
   position: relative;
   width: 50px;
@@ -556,7 +546,7 @@ body {
   background-position: 50% 50%;
 }
 
-.container .testimonials-card-wrapper {
+#testi .testimonials-card-wrapper {
   display: flex;
   flex-direction: column;
   width: 329px;
@@ -564,7 +554,7 @@ body {
   position: relative;
 }
 
-.container .testimonials-card-2 {
+#testi .testimonials-card-2 {
   display: flex;
   flex-direction: column;
   width: 348px;
@@ -577,7 +567,7 @@ body {
   background-color: var(--light-background-color);
 }
 
-.container .circle-3 {
+#testi .circle-3 {
   background-image: url(./img/testimonial-user-cover-86.png);
   position: relative;
   width: 50px;
@@ -585,7 +575,6 @@ body {
   background-size: cover;
   background-position: 50% 50%;
 }
-
 
 @media screen and (max-width: 1000px) {
   * {
@@ -942,13 +931,13 @@ body {
 
 /* Products : */
 
-.products {
+#products {
   display: flex;
 }
 
-h1 {
-  font-family: 'Montserrat', sans-serif;
-  color: #00525D;
+#products h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #00525d;
   font-weight: 700;
   text-align: center;
   margin: 0;
@@ -956,48 +945,47 @@ h1 {
   margin-top: 0;
 }
 
-.fill-item {
+#products .fill-item {
   display: flex;
   flex-wrap: wrap;
 }
 
-aside {
+#products aside {
   flex: 1;
   max-width: 10%;
   margin-left: 3vw;
 }
 
-main {
+#products main {
   flex: 2;
   max-width: 90%;
   display: flex;
 }
 
-.content-wrapper {
+#products .content-wrapper {
   display: flex;
   flex-direction: column;
 }
 
-.button-wrapper {
+#products .button-wrapper {
   display: flex;
   flex-direction: row;
   align-content: space-around;
-
 }
 
-.navigationBtn {
+#products .navigationBtn {
   margin: 5px;
   width: 24px;
   height: 24px;
-  border: 2px solid #00525D;
+  border: 2px solid #00525d;
 }
 
-.content-fill {
+#products .content-fill {
   display: flex;
   flex-direction: row;
 }
 
-.product-card {
+#products .product-card {
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -1019,7 +1007,7 @@ main {
 
 /* Product Card : */
 
-.card-image {
+#products .card-image {
   width: 261px;
   height: 225px;
   display: flex;
@@ -1028,11 +1016,11 @@ main {
   position: relative;
 }
 
-.card-image {
+#products .card-image {
   background-image: url(img/rizki/productCard/product-cover.png);
 }
 
-.card-image #sale {
+#products .card-image #sale {
   margin-top: 1vw;
   margin-left: 0.5vw;
   position: relative;
@@ -1040,16 +1028,16 @@ main {
 
 #title-image {
   position: absolute;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  color: #00525D;
+  color: #00525d;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0;
 }
 
-.card-image #drop {
+#products .card-image #drop {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1057,7 +1045,7 @@ main {
   margin: 0 auto;
 }
 
-.card-desc {
+#products .card-desc {
   width: 261px;
   height: 225px;
   margin-top: 0;
@@ -1067,43 +1055,43 @@ main {
   margin-left: 3vw;
 }
 
-.title {
-  font-family: 'Montserrat', sans-serif;
+#products .title {
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  color: #F9995D;
+  color: #f9995d;
   size: 10.5px;
 }
 
-.description {
-  font-family: 'Montserrat', sans-serif;
+#products .description {
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: #737373;
 }
 
-.sales {
+#products .sales {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #737373;
 }
 
-button {
-  font-family: 'Montserrat', sans-serif;
+#products button {
+  font-family: "Montserrat", sans-serif;
   background-color: white;
   border: 0;
-  color: #00525D;
-  box-shadow: 0 0 0 1px #00525D;
+  color: #00525d;
+  box-shadow: 0 0 0 1px #00525d;
   border-radius: 15px;
 }
 
 /* Footer : */
 
-.container-footer {
-  background-color: #00525D;
+#footer .container-footer {
+  background-color: #00525d;
 }
 
-.image {
+#footer .image {
   background-color: white;
   width: 20%;
   border-radius: 17px;
@@ -1111,29 +1099,27 @@ button {
   overflow: hidden;
 }
 
-.navigation {
+#footer .navigation {
   width: 75%;
   position: relative;
 }
 
-.main {
+#footer .main {
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: space-around;
-  color: #FFFFFF;
-  ;
+  color: #ffffff;
 }
 
-.one {
-  color: #F9995D;
+#footer .one {
+  color: #f9995d;
   font-size: 16px;
 }
 
-.child {
+#footer .child {
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
-  ;
+  font-family: "Montserrat", sans-serif;
   color: white;
   display: flex;
   justify-content: space-around;
@@ -1149,11 +1135,11 @@ button {
 
 #copyright {
   margin-left: 5vw;
-  font-family: 'Work Sans';
+  font-family: "Work Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #00525D;
+  color: #00525d;
   display: flex;
 }
