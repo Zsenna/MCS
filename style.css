@@ -947,7 +947,7 @@ html {
 
 #products .fill-item {
   display: flex;
-  flex-wrap: wrap;
+    
 }
 
 #products aside {
@@ -1014,9 +1014,6 @@ html {
   align-items: flex-start;
   justify-content: left;
   position: relative;
-}
-
-#products .card-image {
   background-image: url(img/rizki/productCard/product-cover.png);
 }
 
@@ -1031,8 +1028,8 @@ html {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   color: #00525d;
-  bottom: 0;
-  left: 0;
+  bottom: 5%;
+  left: 35%;
   right: 0;
   margin: 0;
 }
@@ -1062,6 +1059,15 @@ html {
   size: 10.5px;
 }
 
+#products .sales .sales_img{
+  height: 24px;
+  width: 24px;
+}
+
+.sales .text{
+  margin-top: 16px;
+  margin-left: 4px;
+}
 #products .description {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
@@ -1089,6 +1095,8 @@ html {
 
 #footer .container-footer {
   background-color: #00525d;
+  display: flex;
+  align-items: center;
 }
 
 #footer .image {
