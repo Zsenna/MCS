@@ -485,6 +485,7 @@ html {
   letter-spacing: 0.2px;
   line-height: 20px;
 }
+
 #testi .div-2 {
   height: 50px;
   align-items: center;
@@ -947,7 +948,7 @@ html {
 
 #products .fill-item {
   display: flex;
-  flex-wrap: wrap;
+
 }
 
 #products aside {
@@ -1014,9 +1015,6 @@ html {
   align-items: flex-start;
   justify-content: left;
   position: relative;
-}
-
-#products .card-image {
   background-image: url(img/rizki/productCard/product-cover.png);
 }
 
@@ -1031,8 +1029,8 @@ html {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   color: #00525d;
-  bottom: 0;
-  left: 0;
+  bottom: 5%;
+  left: 35%;
   right: 0;
   margin: 0;
 }
@@ -1047,7 +1045,7 @@ html {
 
 #products .card-desc {
   width: 261px;
-  height: 225px;
+  height: 900px;
   margin-top: 0;
 }
 
@@ -1060,6 +1058,16 @@ html {
   font-weight: 700;
   color: #f9995d;
   size: 10.5px;
+}
+
+#products .sales .sales_img {
+  height: 24px;
+  width: 24px;
+}
+
+.sales .text {
+  margin-top: 16px;
+  margin-left: 4px;
 }
 
 #products .description {
@@ -1076,6 +1084,35 @@ html {
   color: #737373;
 }
 
+#products .price-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#products .grayed-price {
+  color: var(--muted-color, #BDBDBD);
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  /* 150% */
+  letter-spacing: 0.075px;
+  text-decoration-line: strikethrough;
+}
+
+#products .current-price {
+  margin-left: 4px;
+  color: var(--secondary-color-1, #5AACA8);
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  /* 150% */
+  letter-spacing: 0.075px;
+}
+
 #products button {
   font-family: "Montserrat", sans-serif;
   background-color: white;
@@ -1089,6 +1126,8 @@ html {
 
 #footer .container-footer {
   background-color: #00525d;
+  display: flex;
+  align-items: center;
 }
 
 #footer .image {
