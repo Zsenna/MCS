@@ -273,6 +273,28 @@ html {
   height: 10%;
 }
 
+#visimisi1 .bg {
+  width: 30%;
+  height: 100%;
+  right: 4.8em;
+  position: absolute;
+}
+
+#visimisi1 .bg1 {
+  width: 50%;
+  height: 100%;
+  right: 0;
+  position: absolute;
+}
+
+#visimisi1 .bg2 {
+  width: 30%;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 #visimisi3 {
   padding: 3em 12em;
   width: 100%;
@@ -954,7 +976,6 @@ html {
 
 #products .fill-item {
   display: flex;
-
 }
 
 #products aside {
@@ -1092,7 +1113,7 @@ html {
 }
 
 #products .grayed-price {
-  color: var(--muted-color, #BDBDBD);
+  color: var(--muted-color, #bdbdbd);
   font-family: Montserrat;
   font-size: 12px;
   font-style: normal;
@@ -1105,7 +1126,7 @@ html {
 
 #products .current-price {
   margin-left: 4px;
-  color: var(--secondary-color-1, #5AACA8);
+  color: var(--secondary-color-1, #5aaca8);
   font-family: Montserrat;
   font-size: 12px;
   font-style: normal;
