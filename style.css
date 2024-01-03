@@ -940,6 +940,7 @@ html {
 
 #products {
   display: flex;
+  justify-content: center;
 }
 
 #products h1 {
@@ -954,18 +955,33 @@ html {
 
 #products .fill-item {
   display: flex;
-
 }
 
 #products aside {
   flex: 1;
-  max-width: 10%;
   margin-left: 3vw;
+}
+
+#products .products-nav-text_highlighted {
+  color: #00525D;
+  font-family: Work Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#products .products-nav-text {
+  color: var(--Neutral-200, #C2C7D6);
+  font-family: Work Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 #products main {
   flex: 2;
-  max-width: 90%;
   display: flex;
 }
 
@@ -989,6 +1005,11 @@ html {
 
 #products .content-fill {
   display: flex;
+  flex-direction: column;
+}
+
+#products .row-products {
+  display: flex;
   flex-direction: row;
 }
 
@@ -1008,8 +1029,13 @@ html {
 
 #pageControl {
   display: flex;
-  width: 43px;
+  width: 72px;
   height: 16px;
+  justify-content: space-between;
+}
+
+#products .page-control-dot{
+  margin-right: 15px;
 }
 
 /* Product Card : */
@@ -1051,7 +1077,7 @@ html {
 
 #products .card-desc {
   width: 261px;
-  height: 900px;
+  height: 261px;
   margin-top: 0;
 }
 
@@ -1086,7 +1112,7 @@ html {
   color: #737373;
 }
 
-#products .price-container {
+/* #products .price-container {
   display: flex;
   flex-direction: row;
 }
@@ -1098,7 +1124,7 @@ html {
   font-style: normal;
   font-weight: 700;
   line-height: 18px;
-  /* 150% */
+
   letter-spacing: 0.075px;
   text-decoration-line: strikethrough;
 }
@@ -1111,9 +1137,9 @@ html {
   font-style: normal;
   font-weight: 700;
   line-height: 18px;
-  /* 150% */
+
   letter-spacing: 0.075px;
-}
+} */
 
 #products button {
   font-family: "Montserrat", sans-serif;
@@ -1122,6 +1148,47 @@ html {
   color: #00525d;
   box-shadow: 0 0 0 1px #00525d;
   border-radius: 15px;
+}
+
+/* Item : */
+
+.section {
+  width: 156px;
+  height: 150px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.section-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.section-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-section {
+  height: 900px;
+  width: 900px;
+  margin-right: 100px;
+}
+
+.topTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #00525D;
+  font-size: 74px;
+}
+
+li {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #00525D;
+  font-size: 16px;
 }
 
 /* Footer : */
