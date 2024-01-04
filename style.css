@@ -273,6 +273,28 @@ html {
   height: 10%;
 }
 
+#visimisi1 .bg {
+  width: 30%;
+  height: 100%;
+  right: 4.8em;
+  position: absolute;
+}
+
+#visimisi1 .bg1 {
+  width: 50%;
+  height: 100%;
+  right: 0;
+  position: absolute;
+}
+
+#visimisi1 .bg2 {
+  width: 30%;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 #visimisi3 {
   padding: 3em 12em;
   width: 100%;
@@ -356,7 +378,7 @@ html {
 #testi .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #00525d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -367,6 +389,17 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+#testi .swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+  box-sizing: content-box;
 }
 
 #testi {
@@ -385,7 +418,7 @@ html {
   background-color: #00525d;
   overflow: hidden;
   width: 1050px;
-  height: 417px;
+  height: 600px;
   position: relative;
 }
 
@@ -960,9 +993,17 @@ html {
 #products aside {
   flex: 1;
   margin-left: 3vw;
+  width: 10rem;
+}
+
+#products .selected-nav-wrapper{
+  display: flex;
+  flex-direction: row;
 }
 
 #products .products-nav-text_highlighted {
+  margin-left: 0.5vw;
+  margin-top: 6px;
   color: #00525D;
   font-family: Work Sans;
   font-size: 24px;
@@ -982,6 +1023,10 @@ html {
   cursor: pointer;
 }
 
+#products #itemBtn{
+  margin-right: 15px;
+}
+
 #products main {
   flex: 2;
   display: flex;
@@ -996,13 +1041,7 @@ html {
   display: flex;
   flex-direction: row;
   align-content: space-around;
-}
-
-#products .navigationBtn {
-  margin: 5px;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #00525d;
+  margin-bottom: 30px;
 }
 
 #products .content-fill {
@@ -1062,10 +1101,11 @@ html {
 .title-image {
   position: absolute;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
   font-weight: 700;
   color: #00525d;
   bottom: 5%;
-  left: 35%;
+  left: 1%;
   right: 0;
   margin: 0;
 }
@@ -1080,7 +1120,7 @@ html {
 
 #products .card-desc {
   width: 261px;
-  height: 261px;
+  height: 130px;
   margin-top: 0;
 }
 
@@ -1121,7 +1161,7 @@ html {
 }
 
 #products .grayed-price {
-  color: var(--muted-color, #BDBDBD);
+  color: var(--muted-color, #bdbdbd);
   font-family: Montserrat;
   font-size: 12px;
   font-style: normal;
@@ -1134,7 +1174,7 @@ html {
 
 #products .current-price {
   margin-left: 4px;
-  color: var(--secondary-color-1, #5AACA8);
+  color: var(--secondary-color-1, #5aaca8);
   font-family: Montserrat;
   font-size: 12px;
   font-style: normal;
@@ -1156,10 +1196,8 @@ html {
 /* Item : */
 
 .section {
-  width: 156px;
-  height: 150px;
+  width: 849px;
   display: flex;
-  align-items: flex-start;
   justify-content: left;
   flex-direction: column;
 }
@@ -1175,7 +1213,7 @@ html {
 }
 
 .text-section {
-  height: 900px;
+  height: 300px;
   width: 900px;
   margin-right: 100px;
 }
@@ -1302,7 +1340,8 @@ li {
 }
 
 .frame .p {
-  position: relative;
+  display: flex;
+  position: absolute;
   width: fit-content;
   margin-top: -1px;
   font-family: "Montserrat", Helvetica;
@@ -1411,7 +1450,7 @@ li {
 
 .frame .indicates-a-required {
   top: 134px;
-  left: 0;
+  left: 0px;
   font-family: "Montserrat", Helvetica;
   font-weight: 400;
   color: transparent;
@@ -1548,6 +1587,10 @@ input[type="submit"] {
   display: flex;
   justify-content: space-around;
   color: #ffffff;
+}
+
+#footer .flex-container{
+  margin-top: 100px;
 }
 
 #footer .one {
