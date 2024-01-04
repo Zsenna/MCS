@@ -145,6 +145,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentPage++;
             }
         }
+
+        createPageDots(totalPages);
     }
     
 
