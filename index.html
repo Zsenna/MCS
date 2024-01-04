@@ -36,7 +36,7 @@
                         <a class="nav-link" href="#products" style="color: rgba(255, 255, 255, 1);">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact-us" style="color: rgba(230, 196, 80, 1);">Contact Us</a>
+                        <a class="nav-link" href="#contactus" style="color: rgba(230, 196, 80, 1);">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -207,6 +207,7 @@
     <!-- end visi & misi -->
 
     <!-- Products : -->
+    <script src="productsData.js"></script>
 
     <div id="box" class="box">
         <div id="specialize" class="box">
@@ -217,10 +218,10 @@
     <section id="products">
         <div class="fill-item">
             <aside class="products-nav">
-                <p class="products-nav-text_highlighted">Products</p>
-                <p class="products-nav-text">Antibiotics</p>
-                <p class="products-nav-text">Solfonamides</p>
-                <p class="products-nav-text">Steroids</p>
+                <p id="APINav" class="products-nav-text">API</p>
+                <p id="expinentNav" class="products-nav-text">EXIPIENT</p>
+                <p id="extractNav" class="products-nav-text">EXTRACT</p>
+                <p id="" class="products-nav-text">STERIS</p>
             </aside>
 
             <main>
@@ -230,21 +231,19 @@
                         <img id="listBtn" class="navigationBtn" src="img/rizki/Product/listBtn.png">
                     </div>
 
-                    <!-- Item  -->
-
                     <div class="content-fill">
                         <div class="product-box">
                             <div class="row-products">
                                 <section class="product-card">
                                     <div class="card-image">
                                         <img id="sale" src="img/rizki/productCard/saleTag.png">
-                                        <p id="title-image">Acarbose</p>
+                                        <p class="title-image" id="product1">Acarbose</p>
                                         <img id="drop" src="img/rizki/productCard/Vector.png">
                                     </div>
                                     <div class="card-desc">
                                         <div class="card-content">
-                                            <p class="title">Antibiotics</p>
-                                            <p class="description">We focus on ergonomics and meeting
+                                            <p class="title" id="principal1">Antibiotics</p>
+                                            <p class="description" id="category1">We focus on ergonomics and meeting
                                                 you where you work. It's only a
                                                 keystroke away.</p>
                                             <div class="sales">
@@ -259,13 +258,13 @@
                                 <section class="product-card">
                                     <div class="card-image">
                                         <img id="sale" src="img/rizki/productCard/saleTag.png">
-                                        <p id="title-image">Acarbose</p>
+                                        <p class="title-image" id="product2">Acarbose</p>
                                         <img id="drop" src="img/rizki/productCard/Vector.png">
                                     </div>
                                     <div class="card-desc">
                                         <div class="card-content">
-                                            <p class="title">Antibiotics</p>
-                                            <p class="description">We focus on ergonomics and meeting
+                                            <p class="title" id="principal2">Antibiotics</p>
+                                            <p class="description" id="category2">We focus on ergonomics and meeting
                                                 you where you work. It's only a
                                                 keystroke away.</p>
                                             <div class="sales">
@@ -280,24 +279,19 @@
                                 <section class="product-card">
                                     <div class="card-image">
                                         <img id="sale" src="img/rizki/productCard/saleTag.png">
-                                        <p id="title-image">Acarbose</p>
+                                        <p class="title-image" id="product3">Acarbose</p>
                                         <img id="drop" src="img/rizki/productCard/Vector.png">
                                     </div>
                                     <div class="card-desc">
                                         <div class="card-content">
-                                            <p class="title">Antibiotics</p>
-                                            <p class="description">We focus on ergonomics and meeting
+                                            <p class="title" id="principal3">Antibiotics</p>
+                                            <p class="description" id="category3">We focus on ergonomics and meeting
                                                 you where you work. It's only a
                                                 keystroke away.</p>
                                             <div class="sales">
                                                 <img class="sales_img" src="img/rizki/productCard/downloadBtn.png">
                                                 <p class="text">15 Sales</p>
                                             </div>
-                                            <!-- <div class="price-container">
-                                        <p class="grayed-price">$16.48</p>
-                                        <p class="current-price">$6.48</p>
-                                    </div>
-                                    <img class="basket" src="/img/rizki/productCard/basket.png"> -->
                                             <button>Order WhatsApp > </button>
                                         </div>
                                     </div>
@@ -308,13 +302,13 @@
                                 <section class="product-card">
                                     <div class="card-image">
                                         <img id="sale" src="img/rizki/productCard/saleTag.png">
-                                        <p id="title-image">Acarbose</p>
+                                        <p class="title-image" id="product4">Acarbose</p>
                                         <img id="drop" src="img/rizki/productCard/Vector.png">
                                     </div>
                                     <div class="card-desc">
                                         <div class="card-content">
-                                            <p class="title">Antibiotics</p>
-                                            <p class="description">We focus on ergonomics and meeting
+                                            <p class="title" id="principal4">Antibiotics</p>
+                                            <p class="description" id="category4">We focus on ergonomics and meeting
                                                 you where you work. It's only a
                                                 keystroke away.</p>
                                             <div class="sales">
@@ -329,13 +323,13 @@
                                 <section class="product-card">
                                     <div class="card-image">
                                         <img id="sale" src="img/rizki/productCard/saleTag.png">
-                                        <p id="title-image">Acarbose</p>
+                                        <p class="title-image" id="product5">Acarbose</p>
                                         <img id="drop" src="img/rizki/productCard/Vector.png">
                                     </div>
                                     <div class="card-desc">
                                         <div class="card-content">
-                                            <p class="title">Antibiotics</p>
-                                            <p class="description">We focus on ergonomics and meeting
+                                            <p class="title" id="principal5">Antibiotics</p>
+                                            <p class="description" id="category5">We focus on ergonomics and meeting
                                                 you where you work. It's only a
                                                 keystroke away.</p>
                                             <div class="sales">
@@ -350,24 +344,19 @@
                                 <section class="product-card">
                                     <div class="card-image">
                                         <img id="sale" src="img/rizki/productCard/saleTag.png">
-                                        <p id="title-image">Acarbose</p>
+                                        <p class="title-image" id="product6">Acarbose</p>
                                         <img id="drop" src="img/rizki/productCard/Vector.png">
                                     </div>
                                     <div class="card-desc">
                                         <div class="card-content">
-                                            <p class="title">Antibiotics</p>
-                                            <p class="description">We focus on ergonomics and meeting
+                                            <p class="title" id="principal6">Antibiotics</p>
+                                            <p class="description" id="category6">We focus on ergonomics and meeting
                                                 you where you work. It's only a
                                                 keystroke away.</p>
                                             <div class="sales">
                                                 <img class="sales_img" src="img/rizki/productCard/downloadBtn.png">
                                                 <p class="text">15 Sales</p>
                                             </div>
-                                            <!-- <div class="price-container">
-                                        <p class="grayed-price">$16.48</p>
-                                        <p class="current-price">$6.48</p>
-                                    </div>
-                                    <img class="basket" src="/img/rizki/productCard/basket.png"> -->
                                             <button>Order WhatsApp > </button>
                                         </div>
                                     </div>
@@ -378,13 +367,13 @@
                                 <section class="product-card">
                                     <div class="card-image">
                                         <img id="sale" src="img/rizki/productCard/saleTag.png">
-                                        <p id="title-image">Acarbose</p>
+                                        <p class="title-image" id="product7">Acarbose</p>
                                         <img id="drop" src="img/rizki/productCard/Vector.png">
                                     </div>
                                     <div class="card-desc">
                                         <div class="card-content">
-                                            <p class="title">Antibiotics</p>
-                                            <p class="description">We focus on ergonomics and meeting
+                                            <p class="title" id="principal7">Antibiotics</p>
+                                            <p class="description" id="category7">We focus on ergonomics and meeting
                                                 you where you work. It's only a
                                                 keystroke away.</p>
                                             <div class="sales">
@@ -399,13 +388,13 @@
                                 <section class="product-card">
                                     <div class="card-image">
                                         <img id="sale" src="img/rizki/productCard/saleTag.png">
-                                        <p id="title-image">Acarbose</p>
+                                        <p class="title-image" id="product8">Acarbose</p>
                                         <img id="drop" src="img/rizki/productCard/Vector.png">
                                     </div>
                                     <div class="card-desc">
                                         <div class="card-content">
-                                            <p class="title">Antibiotics</p>
-                                            <p class="description">We focus on ergonomics and meeting
+                                            <p class="title" id="principal8">Antibiotics</p>
+                                            <p class="description" id="category8">We focus on ergonomics and meeting
                                                 you where you work. It's only a
                                                 keystroke away.</p>
                                             <div class="sales">
@@ -420,24 +409,19 @@
                                 <section class="product-card">
                                     <div class="card-image">
                                         <img id="sale" src="img/rizki/productCard/saleTag.png">
-                                        <p id="title-image">Acarbose</p>
+                                        <p class="title-image" id="product9">Acarbose</p>
                                         <img id="drop" src="img/rizki/productCard/Vector.png">
                                     </div>
                                     <div class="card-desc">
                                         <div class="card-content">
-                                            <p class="title">Antibiotics</p>
-                                            <p class="description">We focus on ergonomics and meeting
+                                            <p class="title" id="principal9">Antibiotics</p>
+                                            <p class="description" id="category9">We focus on ergonomics and meeting
                                                 you where you work. It's only a
                                                 keystroke away.</p>
                                             <div class="sales">
                                                 <img class="sales_img" src="img/rizki/productCard/downloadBtn.png">
                                                 <p class="text">15 Sales</p>
                                             </div>
-                                            <!-- <div class="price-container">
-                                        <p class="grayed-price">$16.48</p>
-                                        <p class="current-price">$6.48</p>
-                                    </div>
-                                    <img class="basket" src="/img/rizki/productCard/basket.png"> -->
                                             <button>Order WhatsApp > </button>
                                         </div>
                                     </div>
@@ -512,13 +496,13 @@
 
 
                     <div id="tes">
-                        <img src="img/rizki/Product/Back Button.png">
+                        <img id="product-back" src="img/rizki/Product/Back Button.png">
                         <div id="pageControl">
                             <img class="page-control-dot" src="img/rizki/Product/currentBtn.png">
                             <img class="page-control-dot" src="img/rizki/Product/currentBtn.png">
                             <img class="page-control-dot" src="img/rizki/Product/currentBtn.png">
                         </div>
-                        <img src="img/rizki/Product/Next Button.png">
+                        <img id="product-next" src="img/rizki/Product/Next Button.png">
                     </div>
                 </div>
             </main>
@@ -656,7 +640,83 @@
             </div>
         </div>
     </div>
+    <!-- Contact Us : -->
 
+    <div id="contactus" class="frame">
+        <div class="div">
+            <div class="container">
+                <div class="row">
+                    <div class="main-content">
+                        <div class="section-title-sec">Contact Us</div>
+                        <p class="paragraph-sec">
+                            Problems trying to resolve the conflict between <br />the two major realms of Classical
+                            physics:
+                            Newtonian mechanics
+                        </p>
+                    </div>
+                </div>
+                <form class="contactForm" action="your_form_action_url" method="post">
+                    <div class="input-wrapper">
+                        <div class="small-input-button">
+                            <div class="input-row">
+                                <input type="text" class="required-yes" id="yourName" placeholder="Your Name">
+                                <!-- <p class="p"><span class="text-wrapper">Your Name</span> <span class="span">*</span></p> -->
+
+                                <input type="text" class="required-yes-2" id="reasonForContacting"
+                                    placeholder="Reason for Contacting">
+                                <!-- <p class="p"><span class="text-wrapper">Reason for Contacting</span> <span class="span">*</span></p> -->
+                                </input>
+                            </div>
+                            <div class="input-row">
+                                <input type="text" class="email-wrapper" id="e-mail" placeholder="E-Mail">
+                                <!-- <p class="p"><span class="text-wrapper">Email</span> <span class="span">*</span></p> -->
+                                </input>
+                                <input type="number" class="required-no-dropdown" id="phoneNo" placeholder="Phone">
+                                <!-- <div class="text-wrapper-2">Phone</div> -->
+                                </input>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="overlap-group">
+                                <input type="text" class="div-wrapper" placeholder="Message">
+                                </input>
+                                <p class="indicates-a-required" back>
+                                    <span class="text-wrapper-3">*</span>
+                                    <span class="text-wrapper-5">indicates a required field</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="color-primary-status">
+                        <button class="text-wrapper-6">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+            <img class="vector" src="img/vector-2.svg" />
+            <img class="img" src="img/vector-2.svg" />
+        </div>
+    </div>
+
+    <!-- <div class="contact-us">
+        <p id="contactUs"> Contact Us</p>
+        <p id="contactParagraph"> Problems trying to resolve the conflict between<br> 
+            the two major realms of Classical physics: Newtonian mechanics</p>
+        <form class="input-form">
+            <div class="flex-container-contactUs">
+                <input type="text" id="name" value="tes">
+                <input type="email" id="e-mail" value="Email">
+            </div>
+    
+            <div class="flex-container">
+                <input type="text" id="reason" value="Reason for Contacting">
+                <input type="text" id="phone" value="Phone">
+        
+            </div>
+            <input type="text" id="message" value="Message">
+            <input type="submit" value="Submit">
+        </form>
+    </div> -->
 
     <!-- Footer : -->
     <footer id="footer">
@@ -683,6 +743,13 @@
                     <div class="flex-container">
                         <p class="one">Get In Touch</p>
                         <br>
+                        <div class="getInTouch">
+                            <p>Telp. : + 62 - 21 8660 1482 </p>
+                            <p>+ 62 - 21 22461997</p>
+                            <p>+ 62 - 21 22461998 </p>
+                            <p>Fax : + 62 - 21 8660 1539 </p>
+                            <p>Email : info@mcspt-group.com </p>
+                        </div>
                     </div>
                 </section>
             </div>
