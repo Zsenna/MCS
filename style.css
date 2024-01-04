@@ -969,6 +969,7 @@ html {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 }
 
 #products .products-nav-text {
@@ -978,6 +979,7 @@ html {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  cursor: pointer;
 }
 
 #products main {
@@ -1014,7 +1016,7 @@ html {
 }
 
 #products .product-card {
-  display: flex;
+  display: block;
   flex-direction: column;
   width: fit-content;
   margin: 11px;
