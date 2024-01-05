@@ -368,7 +368,6 @@ html {
 }
 
 /* testimoni */
-
 #testi .swiper {
   margin-top: 80px;
   width: 100%;
@@ -398,7 +397,10 @@ html {
   z-index: 1;
   display: flex;
   transition-property: transform;
-  transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+  transition-timing-function: var(
+    --swiper-wrapper-transition-timing-function,
+    initial
+  );
   box-sizing: content-box;
 }
 
@@ -764,7 +766,7 @@ html {
     align-items: center;
     flex-direction: column;
     gap: 3em;
-    padding: 2em 4em;
+    padding: 2em 0em;
   }
 
   #specialize .col {
@@ -996,7 +998,7 @@ html {
 }
 
 #products .products-nav-text_highlighted {
-  color: #00525D;
+  color: #00525d;
   font-family: Work Sans;
   font-size: 24px;
   font-style: normal;
@@ -1006,7 +1008,7 @@ html {
 }
 
 #products .products-nav-text {
-  color: var(--Neutral-200, #C2C7D6);
+  color: var(--Neutral-200, #c2c7d6);
   font-family: Work Sans;
   font-size: 24px;
   font-style: normal;
@@ -1213,16 +1215,16 @@ html {
 }
 
 .topTitle {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  color: #00525D;
+  color: #00525d;
   font-size: 74px;
 }
 
 li {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  color: #00525D;
+  color: #00525d;
   font-size: 16px;
 }
 
@@ -1252,17 +1254,16 @@ li {
   left: 23px;
 }
 
-.frame .contactForm{
+.frame .contactForm {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.frame .input-wrapper{
+.frame .input-wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
-
 }
 
 .frame .small-input-button {
@@ -1504,7 +1505,6 @@ li {
   top: 187px;
 }
 
-
 /* .contact-us {
   display: flex;
   flex-direction: column;
@@ -1547,8 +1547,6 @@ input[type="submit"] {
   line-height: 22px;
 } */
 
-
-
 /* Footer : */
 
 #footer .container-footer {
@@ -1590,8 +1588,6 @@ input[type="submit"] {
   display: flex;
   justify-content: space-around;
 }
-
-
 
 #mcsFooter {
   width: 267px;
