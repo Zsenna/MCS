@@ -15,18 +15,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     itemBtn.addEventListener('click', function () {
-
         console.log('Item Button Clicked');
         itemPart.style.display = '';
         listPart.style.display = 'none';
+        // currentPage = 1;
 
+        // Add activeButton class to itemBtn and remove it from listBtn
+        itemBtn.classList.add('activeButton');
+        listBtn.classList.remove('activeButton');
     });
 
     listBtn.addEventListener('click', function () {
-
         console.log('List Button Clicked');
         itemPart.style.display = 'none';
         listPart.style.display = '';
+        // currentPage = 1;
+
+        // Add activeButton class to listBtn and remove it from itemBtn
+        listBtn.classList.add('activeButton');
+        itemBtn.classList.remove('activeButton');
     });
 
     // Sembunyikan :
@@ -37,44 +44,44 @@ document.addEventListener('DOMContentLoaded', function () {
     cardDescElements.forEach(cardDesc => {
         cardDesc.setAttribute('hidden', 'true');
     });
-    
+
     // Add event listeners to each "drop" element
     dropElements.forEach((drop, index) => {
         // Get the corresponding "card-desc" element
         const cardDesc = document.querySelectorAll('.card-desc')[index];
-      
+
         // Add event listeners for hover
         drop.addEventListener('mouseover', () => {
-          cardDesc.removeAttribute('hidden');  // Show the corresponding card-desc
+            cardDesc.removeAttribute('hidden');  // Show the corresponding card-desc
         });
-      
+
         // Add event listener for mouseout on the drop element
         drop.addEventListener('mouseout', () => {
-          // Check if the mouse is not over the card-desc before hiding it
-          if (!isMouseOverElement(cardDesc)) {
-            cardDesc.setAttribute('hidden', 'true'); // Hide the corresponding card-desc
-          }
+            // Check if the mouse is not over the card-desc before hiding it
+            if (!isMouseOverElement(cardDesc)) {
+                cardDesc.setAttribute('hidden', 'true'); // Hide the corresponding card-desc
+            }
         });
-      
+
         // Add event listener for mouseover on the card-desc itself
         cardDesc.addEventListener('mouseover', () => {
-          cardDesc.removeAttribute('hidden');  // Show the corresponding card-desc
+            cardDesc.removeAttribute('hidden');  // Show the corresponding card-desc
         });
-      
+
         // Add event listener for mouseout on the card-desc itself
         cardDesc.addEventListener('mouseout', () => {
-          cardDesc.setAttribute('hidden', 'true'); // Hide the corresponding card-desc
+            cardDesc.setAttribute('hidden', 'true'); // Hide the corresponding card-desc
         });
-      });
-      
-      // Function to check if the mouse is over an element
-      function isMouseOverElement(element) {
+    });
+
+    // Function to check if the mouse is over an element
+    function isMouseOverElement(element) {
         const { left, top, width, height } = element.getBoundingClientRect();
         const mouseX = event.clientX;
         const mouseY = event.clientY;
-      
+
         return mouseX >= left && mouseX <= left + width && mouseY >= top && mouseY <= top + height;
-      }
+    }
 
     // Navbar :
     const productNavItems = document.querySelectorAll('.products-nav-text');
@@ -100,8 +107,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Show the products for the new category
             showNextPage();
+
+            // Toggle the visibility of the associated image
+            // toggleImageVisibility(this);
         });
     });
+
 
     // Set value untuk data dari Products :
     let currentPage = 1;
@@ -110,13 +121,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showNextPage() {
         const totalPages = Math.ceil(totalProducts / productsPerPage);
-    
+
         if (currentPage <= totalPages) {
             const startIndex = (currentPage - 1) * productsPerPage;
             const endIndex = startIndex + productsPerPage;
-    
+
             let productsToShow;
-    
+
             if (highlighted_nav === 'STERIS') {
                 // Display STERIS products
                 productsToShow = productsSteris.slice(startIndex, endIndex);
@@ -125,16 +136,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 const highlightedProducts = productsBahanBaku.filter((product) => product.CATEGORY === highlighted_nav);
                 productsToShow = highlightedProducts.slice(startIndex, endIndex);
             }
-    
+
             updateProductDisplay(productsToShow);
-    
+
             const remainingProducts = (highlighted_nav === 'STERIS')
                 ? productsSteris.slice(endIndex)
                 : productsBahanBaku.filter((product) => product.CATEGORY === highlighted_nav).slice(endIndex);
-    
+
             if (remainingProducts.length === 0 || currentPage >= totalPages) {
                 hideUnusedSections(totalPages); // Pass totalPages as an argument
-    
+
                 // Disable the next button if there are no more products or if it's the last page
                 const nextButton = document.getElementById('product-next');
                 if (nextButton) {
@@ -146,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
-    
+
 
     function showPreviousPage() {
         if (currentPage > 1) {
@@ -187,16 +198,53 @@ document.addEventListener('DOMContentLoaded', function () {
                 productCard.style.display = 'block';
                 document.getElementById(`product${productId}`).innerText = product ? product['Nama Barang'] || product.PRODUCT : '';
                 document.getElementById(`principal${productId}`).innerText = product ? product['Klasifikasi Produk'] || product.PRINCIPAL : '';
-                document.getElementById(`category${productId}`).innerText = highlighted_nav === 'STERIS' ? product ? product['Klasifikasi Produk'] || '' : '' : product ? product.CATEGORY || '' : '';
+                document.getElementById(`category${productId}`).innerText = '';
+
 
             }
         }
+
+        for (let i = 1; i <= 9; i++) {
+            document.getElementById(`topTitle${i}`).innerText = '';
+            document.getElementById(`ulTopTitle${i}`).innerHTML = '';
+        }
+        
+        // Group products based on the first letter
+        const groupedProducts = {};
+        products.forEach((product) => {
+            const firstLetter = product['PRODUCT'][0].toUpperCase();
+            if (!groupedProducts[firstLetter]) {
+                groupedProducts[firstLetter] = [];
+            }
+            groupedProducts[firstLetter].push(product);
+        });
+        
+        // Display grouped products in alphabetical order
+        let index = 1;
+        const sortedKeys = Object.keys(groupedProducts).sort();
+        for (const firstLetter of sortedKeys) {
+            document.getElementById(`topTitle${index}`).innerText = firstLetter;
+        
+            const ulTopTitle = document.getElementById(`ulTopTitle${index}`);
+            groupedProducts[firstLetter].sort((a, b) => a['PRODUCT'].localeCompare(b['PRODUCT'])).forEach((product) => {
+                const li = document.createElement('li');
+                li.innerText = product['PRODUCT'];
+                ulTopTitle.appendChild(li);
+            });
+        
+            index++;
+        }
+        
+        // Hide unused sections
+        hideUnusedSections(3); // Assuming 3 pages for your example
     }
 
     function hideUnusedSections(totalPages) {
+        console.log('Hiding unused sections...');
         for (let i = totalPages * productsPerPage + 1; i <= totalProducts; i++) {
             const productCard = document.getElementById(`product${i}`);
             if (productCard) {
+                console.log(`Hiding ${productCard.id}`);
                 productCard.style.display = 'none';
             }
         }
@@ -204,25 +252,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listeners for navigation buttons
     const nextButton = document.getElementById('product-next');
-    if (nextButton) {
-        nextButton.addEventListener('click', showNextPage);
-    }
+if (nextButton) {
+    nextButton.addEventListener('click', showNextPage);
+}
 
-    const backButton = document.getElementById('product-back');
-    if (backButton) {
-        backButton.addEventListener('click', showPreviousPage);
-    }
+const backButton = document.getElementById('product-back');
+if (backButton) {
+    backButton.addEventListener('click', showPreviousPage);
+}
 
-    // Event listener for STERIS category
-    const sterisNav = document.getElementById('sterisNav');
-    if (sterisNav) {
-        sterisNav.addEventListener('click', function () {
-            highlighted_nav = 'STERIS';
-            currentPage = 1;
-            showNextPage();
-        });
-    }
+// Event listener for STERIS category
+const sterisNav = document.getElementById('sterisNav');
+if (sterisNav) {
+    sterisNav.addEventListener('click', function () {
+        highlighted_nav = 'STERIS';
+        currentPage = 1;
+        showNextPage();
+    });
+}
 
-    // Initial display on page load
-    showNextPage();
+// Initial display on page load
+showNextPage();
 });

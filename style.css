@@ -995,10 +995,18 @@ html {
 #products aside {
   flex: 1;
   margin-left: 3vw;
+  width: 10rem;
+}
+
+#products .selected-nav-wrapper{
+  display: flex;
+  flex-direction: row;
 }
 
 #products .products-nav-text_highlighted {
-  color: #00525d;
+  margin-left: 0.5vw;
+  margin-top: 6px;
+  color: #00525D;
   font-family: Work Sans;
   font-size: 24px;
   font-style: normal;
@@ -1017,6 +1025,14 @@ html {
   cursor: pointer;
 }
 
+#products .navigationBtn{
+  cursor: pointer;
+}
+
+#products #itemBtn{
+  margin-right: 15px;
+}
+
 #products main {
   flex: 2;
   display: flex;
@@ -1031,13 +1047,7 @@ html {
   display: flex;
   flex-direction: row;
   align-content: space-around;
-}
-
-#products .navigationBtn {
-  margin: 5px;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #00525d;
+  margin-bottom: 30px;
 }
 
 #products .content-fill {
@@ -1069,10 +1079,11 @@ html {
   width: 72px;
   height: 16px;
   justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #products .page-control-dot {
-  margin-right: 15px;
 }
 
 /* Product Card : */
@@ -1096,10 +1107,11 @@ html {
 .title-image {
   position: absolute;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
   font-weight: 700;
   color: #00525d;
   bottom: 5%;
-  left: 35%;
+  left: 1%;
   right: 0;
   margin: 0;
 }
@@ -1114,7 +1126,7 @@ html {
 
 #products .card-desc {
   width: 261px;
-  height: 261px;
+  height: 130px;
   margin-top: 0;
 }
 
@@ -1190,10 +1202,8 @@ html {
 /* Item : */
 
 .section {
-  width: 156px;
-  height: 150px;
+  width: 849px;
   display: flex;
-  align-items: flex-start;
   justify-content: left;
   flex-direction: column;
 }
@@ -1209,7 +1219,7 @@ html {
 }
 
 .text-section {
-  height: 900px;
+  height: 300px;
   width: 900px;
   margin-right: 100px;
 }
@@ -1226,6 +1236,7 @@ li {
   font-weight: 700;
   color: #00525d;
   font-size: 16px;
+  margin-bottom: 1vw;
 }
 
 /* Contact Us : */
@@ -1247,6 +1258,7 @@ li {
 }
 
 .frame .container {
+  margin-top: 70px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -1273,6 +1285,7 @@ li {
 
 .frame .input-row {
   margin-top: 30px;
+  margin-left: 2vw;
   display: flex;
   flex-direction: column;
 }
@@ -1318,6 +1331,7 @@ li {
 }
 
 .frame .required-yes {
+  margin-bottom: 1vw;
   gap: 10px;
   top: 179px;
   display: flex;
@@ -1332,7 +1346,8 @@ li {
 }
 
 .frame .p {
-  position: relative;
+  display: flex;
+  position: absolute;
   width: fit-content;
   margin-top: -1px;
   font-family: "Montserrat", Helvetica;
@@ -1373,6 +1388,7 @@ li {
 }
 
 .frame .email-wrapper {
+  margin-bottom: 1vw;
   display: flex;
   width: 15vw;
   align-items: center;
@@ -1440,7 +1456,7 @@ li {
 
 .frame .indicates-a-required {
   top: 134px;
-  left: 0;
+  left: 0px;
   font-family: "Montserrat", Helvetica;
   font-weight: 400;
   color: transparent;
@@ -1574,6 +1590,10 @@ input[type="submit"] {
   display: flex;
   justify-content: space-around;
   color: #ffffff;
+}
+
+#footer .flex-container{
+  margin-top: 100px;
 }
 
 #footer .one {
