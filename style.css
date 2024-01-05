@@ -1074,7 +1074,7 @@ html {
 
 #pageControl {
   display: flex;
-  width: 72px;
+  width: auto;
   height: 16px;
   justify-content: space-between;
   margin-left: auto;
@@ -1082,6 +1082,7 @@ html {
 }
 
 #products .page-control-dot {
+  margin-right: 0.7vw;
 }
 
 /* Product Card : */
@@ -1567,6 +1568,10 @@ input[type="submit"] {
 
 /* Footer : */
 
+#footer {
+  margin-top: 70px;
+}
+
 #footer .container-footer {
   background-color: #00525d;
   display: flex;
@@ -1593,11 +1598,6 @@ input[type="submit"] {
   justify-content: space-around;
   color: #ffffff;
 }
-
-#footer .flex-container{
-  margin-top: 100px;
-}
-
 #footer .one {
   color: #f9995d;
   font-size: 16px;

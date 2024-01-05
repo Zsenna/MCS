@@ -18,23 +18,26 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Item Button Clicked');
         itemPart.style.display = '';
         listPart.style.display = 'none';
+    
+        // Change the src of itemBtn to cardProductSelectedBtn
+        itemBtn.src = 'img/rizki/Product/cardProductSelectedBtn.png';
+        // Change the src of listBtn to cardListUnselectedBtn
+        listBtn.src = 'img/rizki/Product/cardListUnselectedBtn.png';
         // currentPage = 1;
-
-        // Add activeButton class to itemBtn and remove it from listBtn
-        itemBtn.classList.add('activeButton');
-        listBtn.classList.remove('activeButton');
     });
-
+    
     listBtn.addEventListener('click', function () {
         console.log('List Button Clicked');
         itemPart.style.display = 'none';
         listPart.style.display = '';
+    
+        // Change the src of itemBtn to cardProductUnselectedBtn
+        itemBtn.src = 'img/rizki/Product/cardProductUnselectedBtn.png';
+        // Change the src of listBtn to cardListSelectedBtn
+        listBtn.src = 'img/rizki/Product/cardListSelectedBtn.png';
         // currentPage = 1;
-
-        // Add activeButton class to listBtn and remove it from itemBtn
-        listBtn.classList.add('activeButton');
-        itemBtn.classList.remove('activeButton');
     });
+    
 
     // Sembunyikan :
     const dropElements = document.querySelectorAll('.card-image #drop');
@@ -85,9 +88,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Navbar :
     const productNavItems = document.querySelectorAll('.products-nav-text');
+    const pageControlContainer = document.getElementById('pageControl');
 
 
     let highlighted_nav = 'API';
+    let currentPage = 1;
+
     productNavItems.forEach((item) => {
         item.addEventListener('click', function () {
             // Reset the classes of all the items
@@ -95,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 navItem.classList.remove('products-nav-text_highlighted');
                 navItem.classList.add('products-nav-text');
             });
+
             // Set the class of the clicked item to 'products-nav-text_highlighted'
             this.classList.remove('products-nav-text');
             this.classList.add('products-nav-text_highlighted');
@@ -107,27 +114,84 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Show the products for the new category
             showNextPage();
+            updatePageControl();
 
-            // Toggle the visibility of the associated image
-            // toggleImageVisibility(this);
+            // Hide all images initially
+            const allImages = document.querySelectorAll('.selected-nav-wrapper img');
+            allImages.forEach((image) => {
+                image.setAttribute('hidden', 'true');
+            });
+
+            // Show the image associated with the selected navigation item
+            const imageMapping = {
+                'API': 'ApiImg',
+                'EXIPIENT': 'expientImg',
+                'EXTRACT': 'extractImg',
+                'STERIS': 'sterisImg'
+            };
+
+            const associatedImageId = imageMapping[highlighted_nav];
+            if (associatedImageId) {
+                document.getElementById(associatedImageId).removeAttribute('hidden');
+            }
         });
     });
 
 
+
+    function updatePageControl() {
+        console.log("aaa");
+        // Clear existing dots
+        pageControlContainer.innerHTML = '';
+    
+        // Determine which product array to use based on the highlighted_nav
+        const productsArray = (highlighted_nav === 'STERIS') ? productsSteris : productsBahanBaku;
+    
+        // Calculate the total number of pages for the current division
+        const totalDivisionProducts = productsArray.filter(product => product.CATEGORY === highlighted_nav).length;
+        const totalPages = Math.ceil(totalDivisionProducts / productsPerPage);
+    
+        // Generate new dots based on the total pages
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('img');
+            dot.classList.add('page-control-dot');
+            dot.id = `dotPage${i + 1}`; // Adjusted to start from 1-based index
+    
+            // Highlight the current page dot
+            if (i === currentPage - 1) {
+                dot.src = 'img/rizki/Product/currentBtn.png';
+            } else {
+                dot.src = 'img/rizki/Product/currentBtn.png';
+            }
+    
+            // Add a click event listener to navigate to the corresponding page
+            dot.addEventListener('click', function () {
+                currentPage = i + 1;
+                showNextPage();
+                updatePageControl();
+            });
+    
+            // Append the dot to the page control container
+            pageControlContainer.appendChild(dot);
+        }
+    }
+    
+
+
     // Set value untuk data dari Products :
-    let currentPage = 1;
+    currentPage = 1;
     const productsPerPage = 9;/*  */
     const totalProducts = productsBahanBaku.length;
 
     function showNextPage() {
         const totalPages = Math.ceil(totalProducts / productsPerPage);
-
+    
         if (currentPage <= totalPages) {
             const startIndex = (currentPage - 1) * productsPerPage;
             const endIndex = startIndex + productsPerPage;
-
+    
             let productsToShow;
-
+    
             if (highlighted_nav === 'STERIS') {
                 // Display STERIS products
                 productsToShow = productsSteris.slice(startIndex, endIndex);
@@ -136,16 +200,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 const highlightedProducts = productsBahanBaku.filter((product) => product.CATEGORY === highlighted_nav);
                 productsToShow = highlightedProducts.slice(startIndex, endIndex);
             }
-
+    
             updateProductDisplay(productsToShow);
-
+    
             const remainingProducts = (highlighted_nav === 'STERIS')
                 ? productsSteris.slice(endIndex)
                 : productsBahanBaku.filter((product) => product.CATEGORY === highlighted_nav).slice(endIndex);
-
+    
             if (remainingProducts.length === 0 || currentPage >= totalPages) {
                 hideUnusedSections(totalPages); // Pass totalPages as an argument
-
+    
                 // Disable the next button if there are no more products or if it's the last page
                 const nextButton = document.getElementById('product-next');
                 if (nextButton) {
@@ -191,86 +255,102 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < productsPerPage; i++) {
             const product = products[i];
             const productId = i + 1;
-
+    
             const productCard = document.getElementById(`product${productId}`);
-
+    
             if (productCard) {
                 productCard.style.display = 'block';
-                document.getElementById(`product${productId}`).innerText = product ? product['Nama Barang'] || product.PRODUCT : '';
-                document.getElementById(`principal${productId}`).innerText = product ? product['Klasifikasi Produk'] || product.PRINCIPAL : '';
-                document.getElementById(`category${productId}`).innerText = '';
-
-
+    
+                // Check if the product is defined
+                if (product) {
+                    document.getElementById(`product${productId}`).innerText = product['Nama Barang'] || product.PRODUCT || '';
+                    document.getElementById(`principal${productId}`).innerText = product['Klasifikasi Produk'] || product.PRINCIPAL || '';
+                    document.getElementById(`category${productId}`).innerText = '';
+                } else {
+                    // If the product is undefined, set the content to an empty string
+                    document.getElementById(`product${productId}`).innerText = '';
+                    document.getElementById(`principal${productId}`).innerText = '';
+                    document.getElementById(`category${productId}`).innerText = '';
+                }
             }
         }
-
+    
         for (let i = 1; i <= 9; i++) {
             document.getElementById(`topTitle${i}`).innerText = '';
             document.getElementById(`ulTopTitle${i}`).innerHTML = '';
         }
-        
+    
         // Group products based on the first letter
         const groupedProducts = {};
         products.forEach((product) => {
-            const firstLetter = product['PRODUCT'][0].toUpperCase();
+            const firstLetter = (product && product['PRODUCT']) ? product['PRODUCT'][0].toUpperCase() : '';
             if (!groupedProducts[firstLetter]) {
                 groupedProducts[firstLetter] = [];
             }
             groupedProducts[firstLetter].push(product);
         });
-        
+    
         // Display grouped products in alphabetical order
         let index = 1;
         const sortedKeys = Object.keys(groupedProducts).sort();
         for (const firstLetter of sortedKeys) {
             document.getElementById(`topTitle${index}`).innerText = firstLetter;
-        
+    
             const ulTopTitle = document.getElementById(`ulTopTitle${index}`);
-            groupedProducts[firstLetter].sort((a, b) => a['PRODUCT'].localeCompare(b['PRODUCT'])).forEach((product) => {
+            groupedProducts[firstLetter].sort((a, b) => (a && a['PRODUCT'] || '').localeCompare(b && b['PRODUCT'] || '')).forEach((product) => {
                 const li = document.createElement('li');
-                li.innerText = product['PRODUCT'];
+                li.innerText = product && product['PRODUCT'] || '';
                 ulTopTitle.appendChild(li);
             });
-        
+    
             index++;
         }
-        
+    
         // Hide unused sections
         hideUnusedSections(3); // Assuming 3 pages for your example
     }
+    
 
     function hideUnusedSections(totalPages) {
         console.log('Hiding unused sections...');
-        for (let i = totalPages * productsPerPage + 1; i <= totalProducts; i++) {
+        for (let i = 1; i <= totalProducts; i++) {
             const productCard = document.getElementById(`product${i}`);
             if (productCard) {
-                console.log(`Hiding ${productCard.id}`);
-                productCard.style.display = 'none';
+                if (i > totalPages * productsPerPage) {
+                    console.log(`Hiding ${productCard.id}`);
+                    productCard.setAttribute('hidden', 'true');
+                    productCard.style.display = 'none';
+                } else {
+                    productCard.removeAttribute('hidden');
+                    productCard.style.display = 'block'; // or 'flex', 'grid', etc. depending on your layout
+                }
             }
         }
     }
+    
+    
 
     // Event listeners for navigation buttons
     const nextButton = document.getElementById('product-next');
-if (nextButton) {
-    nextButton.addEventListener('click', showNextPage);
-}
+    if (nextButton) {
+        nextButton.addEventListener('click', showNextPage);
+    }
 
-const backButton = document.getElementById('product-back');
-if (backButton) {
-    backButton.addEventListener('click', showPreviousPage);
-}
+    const backButton = document.getElementById('product-back');
+    if (backButton) {
+        backButton.addEventListener('click', showPreviousPage);
+    }
 
-// Event listener for STERIS category
-const sterisNav = document.getElementById('sterisNav');
-if (sterisNav) {
-    sterisNav.addEventListener('click', function () {
-        highlighted_nav = 'STERIS';
-        currentPage = 1;
-        showNextPage();
-    });
-}
+    // Event listener for STERIS category
+    const sterisNav = document.getElementById('sterisNav');
+    if (sterisNav) {
+        sterisNav.addEventListener('click', function () {
+            highlighted_nav = 'STERIS';
+            currentPage = 1;
+            showNextPage();
+        });
+    }
 
-// Initial display on page load
-showNextPage();
+    // Initial display on page load
+    showNextPage();
 });
