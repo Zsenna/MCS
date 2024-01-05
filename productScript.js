@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Item Button Clicked');
         itemPart.style.display = '';
         listPart.style.display = 'none';
+        // currentPage = 1;
 
         // Add activeButton class to itemBtn and remove it from listBtn
         itemBtn.classList.add('activeButton');
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('List Button Clicked');
         itemPart.style.display = 'none';
         listPart.style.display = '';
+        // currentPage = 1;
 
         // Add activeButton class to listBtn and remove it from itemBtn
         listBtn.classList.add('activeButton');
@@ -105,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Show the products for the new category
             showNextPage();
-            showtitlePage();
 
             // Toggle the visibility of the associated image
             // toggleImageVisibility(this);
@@ -202,6 +203,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
             }
         }
+
+        for (let i = 1; i <= 9; i++) {
+            document.getElementById(`topTitle${i}`).innerText = '';
+            document.getElementById(`ulTopTitle${i}`).innerHTML = '';
+        }
+        
+        // Group products based on the first letter
+        const groupedProducts = {};
+        products.forEach((product) => {
+            const firstLetter = product['PRODUCT'][0].toUpperCase();
+            if (!groupedProducts[firstLetter]) {
+                groupedProducts[firstLetter] = [];
+            }
+            groupedProducts[firstLetter].push(product);
+        });
+        
+        // Display grouped products in alphabetical order
+        let index = 1;
+        const sortedKeys = Object.keys(groupedProducts).sort();
+        for (const firstLetter of sortedKeys) {
+            document.getElementById(`topTitle${index}`).innerText = firstLetter;
+        
+            const ulTopTitle = document.getElementById(`ulTopTitle${index}`);
+            groupedProducts[firstLetter].sort((a, b) => a['PRODUCT'].localeCompare(b['PRODUCT'])).forEach((product) => {
+                const li = document.createElement('li');
+                li.innerText = product['PRODUCT'];
+                ulTopTitle.appendChild(li);
+            });
+        
+            index++;
+        }
+        
+        // Hide unused sections
+        hideUnusedSections(3); // Assuming 3 pages for your example
     }
 
     function hideUnusedSections(totalPages) {
@@ -217,25 +252,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listeners for navigation buttons
     const nextButton = document.getElementById('product-next');
-    if (nextButton) {
-        nextButton.addEventListener('click', showNextPage);
-    }
+if (nextButton) {
+    nextButton.addEventListener('click', showNextPage);
+}
 
-    const backButton = document.getElementById('product-back');
-    if (backButton) {
-        backButton.addEventListener('click', showPreviousPage);
-    }
+const backButton = document.getElementById('product-back');
+if (backButton) {
+    backButton.addEventListener('click', showPreviousPage);
+}
 
-    // Event listener for STERIS category
-    const sterisNav = document.getElementById('sterisNav');
-    if (sterisNav) {
-        sterisNav.addEventListener('click', function () {
-            highlighted_nav = 'STERIS';
-            currentPage = 1;
-            showNextPage();
-        });
-    }
+// Event listener for STERIS category
+const sterisNav = document.getElementById('sterisNav');
+if (sterisNav) {
+    sterisNav.addEventListener('click', function () {
+        highlighted_nav = 'STERIS';
+        currentPage = 1;
+        showNextPage();
+    });
+}
 
-    // Initial display on page load
-    showNextPage();
+// Initial display on page load
+showNextPage();
 });

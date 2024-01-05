@@ -1023,6 +1023,10 @@ html {
   cursor: pointer;
 }
 
+#products .navigationBtn{
+  cursor: pointer;
+}
+
 #products #itemBtn{
   margin-right: 15px;
 }
@@ -1230,6 +1234,7 @@ li {
   font-weight: 700;
   color: #00525D;
   font-size: 16px;
+  margin-bottom: 1vw;
 }
 
 /* Contact Us : */
