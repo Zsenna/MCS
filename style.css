@@ -1084,6 +1084,7 @@ html {
 }
 
 #products .page-control-dot {
+  cursor: pointer;
   margin-right: 0.7vw;
 }
 
