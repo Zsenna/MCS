@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     itemBtn.addEventListener('click', function () {
-        console.log('Item Button Clicked');
         itemPart.style.display = '';
         listPart.style.display = 'none';
 
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     listBtn.addEventListener('click', function () {
-        console.log('List Button Clicked');
         itemPart.style.display = 'none';
         listPart.style.display = '';
 
@@ -106,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
             this.classList.add('products-nav-text_highlighted');
 
             highlighted_nav = this.textContent;
-            console.log(highlighted_nav);
 
             // Reset the current page to 1 when the category changes
             currentPage = 1;
@@ -139,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let firstLoad = true;
 
     function updatePageControl() {
-        console.log("aaa");
+        console.log("updatePagecalled");
         // Clear existing dots
         pageControlContainer.innerHTML = '';
 
@@ -157,18 +154,24 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < totalPages; i++) {
             const dot = document.createElement('img');
             dot.classList.add('page-control-dot');
-            dot.id = `dotPage${i}`; // Adjusted to start from 1-based index
+        
+            // Adjusted to start from 1-based index
+            dot.id = `dotPage${i + 1}`;
+        
             // Highlight the current page dot
-
-            // first time loading page :
-            if (i === currentPage - 2) {
+            if (i === currentPage - 1) {
                 dot.src = 'img/rizki/Product/currentBtn.png';
             } else {
                 dot.src = 'img/rizki/Product/otherPageBtn.png';
+        
+                // Add classes only for the dots immediately before and after the current page
+                if (i === currentPage - 2) { // Dot immediately before the current page
+                    dot.classList.add('_before');
+                } else if (i === currentPage) { // Dot immediately after the current page
+                    dot.classList.add('_after');
+                }
             }
-
-            // Next time loading page
-
+        
             // Add a click event listener to navigate to the corresponding page
             dot.addEventListener('click', function () {
                 currentPage = i + 1;
@@ -176,19 +179,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 updatePageControl();
                 firstLoad = false;
             });
-            console.log(currentPage);
+        
             // Append the dot to the page control container
             pageControlContainer.appendChild(dot);
         }
+        
     }
 
-    console.log(currentPage);
+    // console.log(currentPage);
 
     // Set value untuk data dari Products :
     const productsPerPage = 9;/*  */
     const totalProducts = productsBahanBaku.length;
 
-    function showNextPage() {
+    function showNextPage(allowedIncrement) {
+        console.log("shownextpagerun");
         const totalPages = Math.ceil(totalProducts / productsPerPage);
 
         if (currentPage <= totalPages) {
@@ -234,17 +239,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (nextButton) {
                     nextButton.disabled = true;
                 }
-            } else {
-                // Increment the current page only if there are more pages
+            } else if (allowedIncrement === true) {
+                
                 currentPage++;
             }
         }
-        console.log(currentPage);
+        updatePageControl();
+        // console.log(currentPage);
     }
 
     function showPreviousPage() {
+        console.log("previousPagerun");
         if (currentPage > 1) {
-            const startIndex = (currentPage - 2) * productsPerPage;
+            const startIndex = (currentPage - 1) * productsPerPage;
             const endIndex = startIndex + productsPerPage;
 
             let productsToShow;
@@ -284,9 +291,11 @@ document.addEventListener('DOMContentLoaded', function () {
             currentPage--;
         }
         console.log(currentPage);
+        updatePageControl()
     }
 
     function updateProductDisplay(products) {
+        console.log("updateProduct");
         const productsPerPage = 9;
         let index = 1;
 
@@ -414,25 +423,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listeners for navigation buttons
     const nextButton = document.getElementById('product-next');
     if (nextButton) {
-        nextButton.addEventListener('click', showNextPage);
+        nextButton.addEventListener('click', function() {
+            const dotAfter = document.querySelector('._after'); // Find the dot with the _after class
+            if (dotAfter) {
+                dotAfter.click(); // Mimic a click on the dot
+            }
+        });
     }
-
+    
     const backButton = document.getElementById('product-back');
     if (backButton) {
-        backButton.addEventListener('click', showPreviousPage);
+        backButton.addEventListener('click', function() {
+            const dotBefore = document.querySelector('._before'); // Find the dot with the _before class
+            if (dotBefore) {
+                dotBefore.click(); // Mimic a click on the dot
+            }
+        });
     }
-
-    // Event listener for STERIS category
-    // const sterisNav = document.getElementById('sterisNav');
-    // if (sterisNav) {
-    //     sterisNav.addEventListener('click', function () {
-    //         highlighted_nav = 'STERIS';
-    //         currentPage = 1;
-    //         showNextPage();
-    //     });
-    // }
+    
 
     // Akal2 in iniasisasi pas first page load :
     productNavItems[0].click();
-    showNextPage();
 });
