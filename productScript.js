@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    let firstLoad = true;
 
     function updatePageControl() {
         console.log("aaa");
@@ -151,36 +152,39 @@ document.addEventListener('DOMContentLoaded', function () {
             productsArray.filter(product => product.CATEGORY === highlighted_nav).length;
 
         const totalPages = Math.ceil(totalDivisionProducts / productsPerPage);
-
         // Generate new dots based on the total pages
+        console.log(currentPage);
         for (let i = 0; i < totalPages; i++) {
             const dot = document.createElement('img');
             dot.classList.add('page-control-dot');
-            dot.id = `dotPage${i - 1}`; // Adjusted to start from 1-based index
-            console.log(currentPage);
+            dot.id = `dotPage${i}`; // Adjusted to start from 1-based index
             // Highlight the current page dot
-            if (i === currentPage) {
+
+            // first time loading page :
+            if (i === currentPage - 2) {
                 dot.src = 'img/rizki/Product/currentBtn.png';
             } else {
-                dot.src = 'img/rizki/Product/currentBtn.png';
+                dot.src = 'img/rizki/Product/otherPageBtn.png';
             }
-        
+
+            // Next time loading page
+
             // Add a click event listener to navigate to the corresponding page
             dot.addEventListener('click', function () {
                 currentPage = i + 1;
                 showNextPage();
                 updatePageControl();
+                firstLoad = false;
             });
-        
+            console.log(currentPage);
             // Append the dot to the page control container
             pageControlContainer.appendChild(dot);
         }
     }
 
-
+    console.log(currentPage);
 
     // Set value untuk data dari Products :
-    currentPage = 1;
     const productsPerPage = 9;/*  */
     const totalProducts = productsBahanBaku.length;
 
@@ -224,7 +228,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             if (remainingProducts.length === 0 || currentPage >= totalPages) {
-                hideUnusedSections(totalPages); // Pass totalPages as an argument
 
                 // Disable the next button if there are no more products or if it's the last page
                 const nextButton = document.getElementById('product-next');
@@ -236,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentPage++;
             }
         }
+        console.log(currentPage);
     }
 
     function showPreviousPage() {
@@ -279,6 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             currentPage--;
         }
+        console.log(currentPage);
     }
 
     function updateProductDisplay(products) {
@@ -350,44 +355,58 @@ document.addEventListener('DOMContentLoaded', function () {
             const product = products[i - 1];
             const productId = i;
             const productCard = document.getElementById(`product${productId}`);
-
-            if (productCard) {
-                productCard.style.display = 'block';
-
-                // Check if the product is defined
-                if (product) {
-                    const property = (highlighted_nav === 'STERIS') ? 'Nama Barang' : 'PRODUCT';
-                    document.getElementById(`product${productId}`).innerText = product[property] || '';
-                    document.getElementById(`principal${productId}`).innerText = product['Klasifikasi Produk'] || product.PRINCIPAL || '';
-                    document.getElementById(`category${productId}`).innerText = '';
-                } else {
-                    // If the product is undefined, set the content to an empty string
-                    document.getElementById(`product${productId}`).innerText = '';
-                    document.getElementById(`principal${productId}`).innerText = '';
-                    document.getElementById(`category${productId}`).innerText = '';
+            const cardImage = document.getElementById(`card${productId}`);
+        
+            for (let i = 1; i <= productsPerPage; i++) {
+                const product = products[i - 1];
+                const productId = i;
+                const productCard = document.getElementById(`product${productId}`);
+                const cardImage = document.getElementById(`card${productId}`);
+            
+                if (productCard) {
+                    productCard.style.display = 'block';
+            
+                    // Check if the product is defined
+                    if (product) {
+                        const property = (highlighted_nav === 'STERIS') ? 'Nama Barang' : 'PRODUCT';
+                        document.getElementById(`product${productId}`).innerText = product[property] || '';
+                        document.getElementById(`principal${productId}`).innerText = product['Klasifikasi Produk'] || product.PRINCIPAL || '';
+                        document.getElementById(`category${productId}`).innerText = '';
+            
+                        // Check if the product belongs to Steris and has a valid image name
+                        if (highlighted_nav === 'STERIS' && product['Nama Barang']) {
+                            const imageName = product['Nama Barang'].trim().replace(/\s+/g, '_');
+                            const imagePath = `img/steris/${imageName}.jpg`;
+            
+                            // Check if the image exists, set the background, otherwise set the default background
+                            const imageExists = new Image();
+                            imageExists.src = imagePath;
+                            imageExists.onload = () => {
+                                cardImage.style.backgroundImage = `url(${imagePath})`;
+                                cardImage.style.backgroundSize = 'cover';
+                            };
+                            imageExists.onerror = () => {
+                                cardImage.style.backgroundImage = 'url(img/rizki/productCard/product-cover.png)';
+                            };
+                        } else {
+                            // If the product is not from Steris or does not have a valid image name, set a default background
+                            cardImage.style.backgroundImage = 'url(img/rizki/productCard/product-cover.png)';
+                        }
+                    } else {
+                        // If the product is undefined, set the content to an empty string
+                        document.getElementById(`product${productId}`).innerText = '';
+                        document.getElementById(`principal${productId}`).innerText = '';
+                        document.getElementById(`category${productId}`).innerText = '';
+                        cardImage.style.backgroundImage = 'url(img/rizki/productCard/product-cover.png)';
+                    }
                 }
             }
+            
+            
         }
+        
 
-        // Hide unused sections
-        hideUnusedSections(3); // Assuming 3 pages for your example
-    }
-
-    function hideUnusedSections(totalPages) {
-        console.log('Hiding unused sections...');
-        for (let i = 1; i <= totalProducts; i++) {
-            const productCard = document.getElementById(`product${i}`);
-            if (productCard) {
-                if (i > totalPages * productsPerPage) {
-                    console.log(`Hiding ${productCard.id}`);
-                    productCard.setAttribute('hidden', 'true');
-                    productCard.style.display = 'none';
-                } else {
-                    productCard.removeAttribute('hidden');
-                    productCard.style.display = 'block'; // or 'flex', 'grid', etc. depending on your layout
-                }
-            }
-        }
+        // Hide unused section
     }
 
     updatePageControl();
@@ -413,6 +432,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //     });
     // }
 
-    // Initial display on page load
+    // Akal2 in iniasisasi pas first page load :
+    productNavItems[0].click();
     showNextPage();
 });
