@@ -355,25 +355,56 @@ document.addEventListener('DOMContentLoaded', function () {
             const product = products[i - 1];
             const productId = i;
             const productCard = document.getElementById(`product${productId}`);
-
-            if (productCard) {
-                productCard.style.display = 'block';
-
-                // Check if the product is defined
-                if (product) {
-                    const property = (highlighted_nav === 'STERIS') ? 'Nama Barang' : 'PRODUCT';
-                    document.getElementById(`product${productId}`).innerText = product[property] || '';
-                    document.getElementById(`principal${productId}`).innerText = product['Klasifikasi Produk'] || product.PRINCIPAL || '';
-                    document.getElementById(`category${productId}`).innerText = '';
-                    
-                } else {
-                    // If the product is undefined, set the content to an empty string
-                    document.getElementById(`product${productId}`).innerText = '';
-                    document.getElementById(`principal${productId}`).innerText = '';
-                    document.getElementById(`category${productId}`).innerText = '';
+            const cardImage = document.getElementById(`card${productId}`);
+        
+            for (let i = 1; i <= productsPerPage; i++) {
+                const product = products[i - 1];
+                const productId = i;
+                const productCard = document.getElementById(`product${productId}`);
+                const cardImage = document.getElementById(`card${productId}`);
+            
+                if (productCard) {
+                    productCard.style.display = 'block';
+            
+                    // Check if the product is defined
+                    if (product) {
+                        const property = (highlighted_nav === 'STERIS') ? 'Nama Barang' : 'PRODUCT';
+                        document.getElementById(`product${productId}`).innerText = product[property] || '';
+                        document.getElementById(`principal${productId}`).innerText = product['Klasifikasi Produk'] || product.PRINCIPAL || '';
+                        document.getElementById(`category${productId}`).innerText = '';
+            
+                        // Check if the product belongs to Steris and has a valid image name
+                        if (highlighted_nav === 'STERIS' && product['Nama Barang']) {
+                            const imageName = product['Nama Barang'].trim().replace(/\s+/g, '_');
+                            const imagePath = `img/steris/${imageName}.jpg`;
+            
+                            // Check if the image exists, set the background, otherwise set the default background
+                            const imageExists = new Image();
+                            imageExists.src = imagePath;
+                            imageExists.onload = () => {
+                                cardImage.style.backgroundImage = `url(${imagePath})`;
+                                cardImage.style.backgroundSize = 'cover';
+                            };
+                            imageExists.onerror = () => {
+                                cardImage.style.backgroundImage = 'url(img/rizki/productCard/product-cover.png)';
+                            };
+                        } else {
+                            // If the product is not from Steris or does not have a valid image name, set a default background
+                            cardImage.style.backgroundImage = 'url(img/rizki/productCard/product-cover.png)';
+                        }
+                    } else {
+                        // If the product is undefined, set the content to an empty string
+                        document.getElementById(`product${productId}`).innerText = '';
+                        document.getElementById(`principal${productId}`).innerText = '';
+                        document.getElementById(`category${productId}`).innerText = '';
+                        cardImage.style.backgroundImage = 'url(img/rizki/productCard/product-cover.png)';
+                    }
                 }
             }
+            
+            
         }
+        
 
         // Hide unused section
     }
