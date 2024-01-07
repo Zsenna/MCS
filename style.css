@@ -1039,13 +1039,8 @@ html {
 #products {
   display: flex;
   justify-content: center;
-  border-radius: 0 0 30px 30px;
-  background-color: white;
 }
 
-#boxsec {
-  background: #00525d;
-}
 #products h1 {
   font-family: "Montserrat", sans-serif;
   color: #00525d;
@@ -1066,7 +1061,7 @@ html {
   width: 10rem;
 }
 
-#products .selected-nav-wrapper {
+#products .selected-nav-wrapper{
   display: flex;
   flex-direction: row;
 }
@@ -1074,7 +1069,7 @@ html {
 #products .products-nav-text_highlighted {
   margin-left: 0.5vw;
   margin-top: 6px;
-  color: #00525d;
+  color: #00525D;
   font-family: Work Sans;
   font-size: 24px;
   font-style: normal;
@@ -1093,11 +1088,11 @@ html {
   cursor: pointer;
 }
 
-#products .navigationBtn {
+#products .navigationBtn{
   cursor: pointer;
 }
 
-#products #itemBtn {
+#products #itemBtn{
   margin-right: 15px;
 }
 
@@ -1144,7 +1139,7 @@ html {
 
 #pageControl {
   display: flex;
-  width: 72px;
+  width: auto;
   height: 16px;
   justify-content: space-between;
   margin-left: auto;
@@ -1152,6 +1147,8 @@ html {
 }
 
 #products .page-control-dot {
+  cursor: pointer;
+  margin-right: 0.7vw;
 }
 
 /* Product Card : */
@@ -1163,7 +1160,6 @@ html {
   align-items: flex-start;
   justify-content: left;
   position: relative;
-  background-image: url(img/rizki/productCard/product-cover.png);
 }
 
 #products .card-image #sale {
@@ -1182,7 +1178,9 @@ html {
   left: 1%;
   right: 0;
   margin: 0;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
+
 
 #products .card-image #drop {
   position: absolute;
@@ -1658,7 +1656,6 @@ input[type="submit"] {
 }
 
 #footer .main {
-  margin-top: 90px;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
   display: flex;
