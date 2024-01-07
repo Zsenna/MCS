@@ -7,6 +7,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 /* navbar */
 .navbar {
   width: 100%;
@@ -136,6 +137,9 @@ html {
 }
 
 /* specialize */
+#boxs {
+  background: #00525d;
+}
 #specialize {
   width: 100%;
   height: 100%;
@@ -154,7 +158,7 @@ html {
 
 #specialize .col {
   width: 100%;
-  height: 20vh;
+  height: 25vh;
   margin: 2em 0em;
   padding: 1em 2em;
   overflow: hidden;
@@ -167,7 +171,7 @@ html {
 
 #specialize .text {
   font-family: "Montserrat";
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 700;
   line-height: 32px;
   letter-spacing: 0.10000000149011612px;
@@ -175,13 +179,18 @@ html {
   color: rgba(0, 82, 93, 1);
 }
 
+#specialize .col img {
+  width: 10%;
+}
+
 #specialize .text img {
   margin: 0em 1em;
 }
 
 #specialize h4 {
+  margin-top: 0.5em;
   font-family: "Montserrat";
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
   line-height: 23px;
   letter-spacing: 0em;
@@ -190,8 +199,9 @@ html {
 }
 
 #specialize p {
+  margin-top: 0.5em;
   font-family: "Montserrat";
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.20000000298023224px;
@@ -376,7 +386,6 @@ html {
 #testi .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #00525d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -796,6 +805,10 @@ html {
     width: 20%;
   }
 
+  #specialize .col img {
+    width: 5%;
+  }
+
   #specialize h4 {
     font-family: "Montserrat";
     font-size: 15px;
@@ -968,15 +981,71 @@ html {
     width: 50%;
     height: 10%;
   }
+
+  /* products */
+  #boxp {
+    width: 100%;
+    height: 100%;
+    margin: 2em 0em 0em 0em;
+    background-color: white;
+    border-radius: 0 0 30px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #boxp .text {
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0.10000000149011612px;
+    text-align: center;
+    color: rgba(0, 82, 93, 1);
+  }
+  #boxp .text img {
+    margin: 0em 1em;
+    width: 20%;
+  }
 }
 
 /* Products : */
+#boxp {
+  background-color: rgba(0, 82, 93);
+}
+#prod {
+  border-radius: 0 0 30px 30px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 30px 30px 0 0;
+}
+
+#prod .text {
+  padding: 2em 0em 0em 0em;
+  font-family: "Montserrat";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: center;
+  color: rgba(0, 82, 93, 1);
+}
+
+#prod .text img {
+  margin: 0em 1em;
+}
 
 #products {
   display: flex;
   justify-content: center;
+  border-radius: 0 0 30px 30px;
+  background-color: white;
 }
 
+#boxsec {
+  background: #00525d;
+}
 #products h1 {
   font-family: "Montserrat", sans-serif;
   color: #00525d;
@@ -997,7 +1066,7 @@ html {
   width: 10rem;
 }
 
-#products .selected-nav-wrapper{
+#products .selected-nav-wrapper {
   display: flex;
   flex-direction: row;
 }
@@ -1005,7 +1074,7 @@ html {
 #products .products-nav-text_highlighted {
   margin-left: 0.5vw;
   margin-top: 6px;
-  color: #00525D;
+  color: #00525d;
   font-family: Work Sans;
   font-size: 24px;
   font-style: normal;
@@ -1024,11 +1093,11 @@ html {
   cursor: pointer;
 }
 
-#products .navigationBtn{
+#products .navigationBtn {
   cursor: pointer;
 }
 
-#products #itemBtn{
+#products #itemBtn {
   margin-right: 15px;
 }
 
@@ -1075,7 +1144,7 @@ html {
 
 #pageControl {
   display: flex;
-  width: auto;
+  width: 72px;
   height: 16px;
   justify-content: space-between;
   margin-left: auto;
@@ -1083,8 +1152,6 @@ html {
 }
 
 #products .page-control-dot {
-  cursor: pointer;
-  margin-right: 0.7vw;
 }
 
 /* Product Card : */
@@ -1096,6 +1163,7 @@ html {
   align-items: flex-start;
   justify-content: left;
   position: relative;
+  background-image: url(img/rizki/productCard/product-cover.png);
 }
 
 #products .card-image #sale {
@@ -1114,9 +1182,7 @@ html {
   left: 1%;
   right: 0;
   margin: 0;
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
-
 
 #products .card-image #drop {
   position: absolute;
@@ -1246,8 +1312,11 @@ li {
 }
 
 /* Contact Us : */
-
+#boxcontact {
+  background-color: #00525d;
+}
 .frame {
+  border-radius: 30px 30px 0 0;
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -1569,10 +1638,6 @@ input[type="submit"] {
 
 /* Footer : */
 
-#footer {
-  margin-top: 70px;
-}
-
 #footer .container-footer {
   background-color: #00525d;
   display: flex;
@@ -1600,6 +1665,11 @@ input[type="submit"] {
   justify-content: space-around;
   color: #ffffff;
 }
+
+#footer .flex-container {
+  margin-top: 100px;
+}
+
 #footer .one {
   color: #f9995d;
   font-size: 16px;
