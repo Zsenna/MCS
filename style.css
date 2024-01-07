@@ -1163,6 +1163,10 @@ html {
   color: #737373;
 }
 
+#products #product-next, #products #product-back {
+  cursor: pointer;
+}
+
 /* #products .price-container {
   display: flex;
   flex-direction: row;
@@ -1434,16 +1438,14 @@ li {
 .frame .overlap-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 40vw;
   height: 154px;
   top: 309px;
   left: 292px;
 }
 
 .frame .div-wrapper {
+  width: 37rem;
   display: flex;
-  width: 609px;
   height: 135px;
   align-items: flex-start;
   gap: 10px;
@@ -1591,6 +1593,7 @@ input[type="submit"] {
 }
 
 #footer .main {
+  margin-top: 90px;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
   display: flex;
