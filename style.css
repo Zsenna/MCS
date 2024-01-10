@@ -1127,7 +1127,7 @@ html {
   display: block;
   flex-direction: column;
   width: fit-content;
-  margin: 11px;
+  margin: 0.7vw;
 }
 
 #tes {
@@ -1147,6 +1147,8 @@ html {
 }
 
 #products .page-control-dot {
+  width: 1vw;
+  height: 1vw;
   cursor: pointer;
   margin-right: 0.7vw;
 }
@@ -1154,7 +1156,7 @@ html {
 /* Product Card : */
 
 #products .card-image {
-  width: 261px;
+  width: 20vw;
   height: 225px;
   display: flex;
   align-items: flex-start;
@@ -1191,7 +1193,7 @@ html {
 }
 
 #products .card-desc {
-  width: 261px;
+  width: 20vw;
   height: 130px;
   margin-top: 0;
 }
@@ -1290,8 +1292,8 @@ html {
 
 .text-section {
   height: 300px;
-  width: 900px;
-  margin-right: 100px;
+  width: 50vw;
+  margin-right: 0.3vw;
 }
 
 .topTitle {
