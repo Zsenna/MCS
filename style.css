@@ -1063,7 +1063,7 @@ html {
   display: block;
   flex-direction: column;
   width: fit-content;
-  margin: 11px;
+  margin: 0.7vw;
 }
 
 #tes {
@@ -1083,6 +1083,8 @@ html {
 }
 
 #products .page-control-dot {
+  width: 1vw;
+  height: 1vw;
   cursor: pointer;
   margin-right: 0.7vw;
 }
@@ -1090,7 +1092,7 @@ html {
 /* Product Card : */
 
 #products .card-image {
-  width: 261px;
+  width: 20vw;
   height: 225px;
   display: flex;
   align-items: flex-start;
@@ -1127,7 +1129,7 @@ html {
 }
 
 #products .card-desc {
-  width: 261px;
+  width: 20vw;
   height: 130px;
   margin-top: 0;
 }
@@ -1161,6 +1163,10 @@ html {
   align-items: center;
   font-family: "Montserrat", sans-serif;
   color: #737373;
+}
+
+#products #product-next, #products #product-back {
+  cursor: pointer;
 }
 
 /* #products .price-container {
@@ -1222,8 +1228,8 @@ html {
 
 .text-section {
   height: 300px;
-  width: 900px;
-  margin-right: 100px;
+  width: 50vw;
+  margin-right: 0.3vw;
 }
 
 .topTitle {
@@ -1434,16 +1440,14 @@ li {
 .frame .overlap-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 40vw;
   height: 154px;
   top: 309px;
   left: 292px;
 }
 
 .frame .div-wrapper {
+  width: 37rem;
   display: flex;
-  width: 609px;
   height: 135px;
   align-items: flex-start;
   gap: 10px;

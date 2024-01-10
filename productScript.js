@@ -248,52 +248,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // console.log(currentPage);
     }
 
-    function showPreviousPage() {
-        console.log("previousPagerun");
-        if (currentPage > 1) {
-            const startIndex = (currentPage - 1) * productsPerPage;
-            const endIndex = startIndex + productsPerPage;
-
-            let productsToShow;
-
-            if (highlighted_nav === 'STERIS') {
-                // Display STERIS products
-                productsToShow = productsSteris.slice(startIndex, endIndex);
-            } else {
-                // Display products based on the highlighted category
-                productsToShow = productsBahanBaku
-                    .filter((product) => product.CATEGORY === highlighted_nav)
-                    .slice(startIndex, endIndex);
-            }
-
-            updateProductDisplay(productsToShow);
-
-            // Loop through each product-card to check and hide if principal is blank
-            const productCards = document.querySelectorAll('.product-card');
-            productCards.forEach((productCard, index) => {
-                const principalId = `principal${index + 1}`;
-                const principalElement = document.getElementById(principalId);
-
-                if (principalElement && principalElement.innerText.trim() === '') {
-                    // If principal is blank, make the product-card invisible
-                    productCard.style.visibility = 'hidden';
-                } else {
-                    // Otherwise, make the product-card visible
-                    productCard.style.visibility = 'visible';
-                }
-            });
-
-            const nextButton = document.getElementById('product-next');
-            if (nextButton) {
-                nextButton.disabled = false;
-            }
-
-            currentPage--;
-        }
-        console.log(currentPage);
-        updatePageControl()
-    }
-
     function updateProductDisplay(products) {
         console.log("updateProduct");
         const productsPerPage = 9;
