@@ -1537,12 +1537,11 @@ li {
   display: flex;
   flex-direction: column;
   height: 154px;
-  top: 309px;
-  left: 292px;
+  width: auto;
 }
 
 .frame .div-wrapper {
-  width: 37rem;
+  width: 32vw;
   display: flex;
   height: 135px;
   align-items: flex-start;
