@@ -1380,14 +1380,18 @@ li {
 
 .frame .small-input-button {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .frame .input-row {
   margin-top: 30px;
   margin-left: 2vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+
+.frame .input-row input {
+  margin-right: 2vw;
 }
 
 .frame .row {
