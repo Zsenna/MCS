@@ -153,12 +153,12 @@ html {
   justify-content: center;
   align-items: center;
   gap: 3em;
-  padding: 0em 20em;
+  padding: 0em 15em;
 }
 
 #specialize .col {
   width: 100%;
-  height: 25vh;
+  height: 28vh;
   margin: 2em 0em;
   padding: 1em 2em;
   overflow: hidden;
@@ -190,7 +190,7 @@ html {
 #specialize h4 {
   margin-top: 0.5em;
   font-family: "Montserrat";
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 700;
   line-height: 23px;
   letter-spacing: 0em;
@@ -201,7 +201,7 @@ html {
 #specialize p {
   margin-top: 0.5em;
   font-family: "Montserrat";
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.20000000298023224px;
@@ -906,6 +906,30 @@ html {
     height: 10%;
   }
 
+  #visimisi1 .bg {
+    width: 30%;
+    height: 50%;
+    top: 0;
+    left: 5.5em;
+    position: absolute;
+  }
+
+  #visimisi1 .bg1 {
+    width: 50%;
+    height: 55%;
+    top: 0;
+    left: -2.5em;
+    position: absolute;
+  }
+
+  #visimisi1 .bg2 {
+    width: 32%;
+    height: 15%;
+    position: absolute;
+    top: 12em;
+    left: 7em;
+  }
+
   #visimisi3 {
     padding: 3em 2em;
     width: 100%;
@@ -1061,7 +1085,7 @@ html {
   width: 10rem;
 }
 
-#products .selected-nav-wrapper{
+#products .selected-nav-wrapper {
   display: flex;
   flex-direction: row;
 }
@@ -1069,7 +1093,7 @@ html {
 #products .products-nav-text_highlighted {
   margin-left: 0.5vw;
   margin-top: 6px;
-  color: #00525D;
+  color: #00525d;
   font-family: Work Sans;
   font-size: 24px;
   font-style: normal;
@@ -1088,11 +1112,11 @@ html {
   cursor: pointer;
 }
 
-#products .navigationBtn{
+#products .navigationBtn {
   cursor: pointer;
 }
 
-#products #itemBtn{
+#products #itemBtn {
   margin-right: 15px;
 }
 
@@ -1180,9 +1204,9 @@ html {
   left: 1%;
   right: 0;
   margin: 0;
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
-
 
 #products .card-image #drop {
   position: absolute;
@@ -1229,7 +1253,8 @@ html {
   color: #737373;
 }
 
-#products #product-next, #products #product-back {
+#products #product-next,
+#products #product-back {
   cursor: pointer;
 }
 
