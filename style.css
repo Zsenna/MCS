@@ -1060,9 +1060,15 @@ html {
   margin: 0em 1em;
 }
 
+#produ {
+  background-color: #00525d;
+}
+
 #products {
   display: flex;
   justify-content: center;
+  background-color: white;
+  border-radius: 0 0 30px 30px;
 }
 
 #products h1 {
@@ -1077,6 +1083,7 @@ html {
 
 #products .fill-item {
   display: flex;
+  border-radius: 0 0 30px 30px;
 }
 
 #products aside {
@@ -1352,8 +1359,7 @@ li {
   display: flex;
   background-color: #ffffff;
   overflow-x: hidden;
-  /* width: 1238px; */
-  height: 575px;
+
   position: relative;
 }
 
@@ -1579,6 +1585,7 @@ li {
 }
 
 .frame .color-primary-status {
+  margin-bottom: 2em;
   display: flex;
   width: 271px;
   align-items: center;
