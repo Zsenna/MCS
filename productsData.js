@@ -803,7 +803,8 @@ productsSteris = [
     {
         "No": 1,
         "Nama Barang": "Bio Indicator",
-        "Klasifikasi Produk": "Steris"
+        "Klasifikasi Produk": "Steris",
+        "url gambar" : "img/steris/Bio Indicator.jpg"
     },
     {
         "No": 2,
