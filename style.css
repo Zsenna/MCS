@@ -85,6 +85,9 @@ html {
 }
 
 /* specialize */
+#boxs {
+  background: #00525d;
+}
 #specialize {
   width: 100%;
   height: 100%;
@@ -98,12 +101,12 @@ html {
   justify-content: center;
   align-items: center;
   gap: 3em;
-  padding: 0em 20em;
+  padding: 0em 15em;
 }
 
 #specialize .col {
   width: 100%;
-  height: 20vh;
+  height: 28vh;
   margin: 2em 0em;
   padding: 1em 2em;
   overflow: hidden;
@@ -116,7 +119,7 @@ html {
 
 #specialize .text {
   font-family: "Montserrat";
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 700;
   line-height: 32px;
   letter-spacing: 0.10000000149011612px;
@@ -124,13 +127,18 @@ html {
   color: rgba(0, 82, 93, 1);
 }
 
+#specialize .col img {
+  width: 10%;
+}
+
 #specialize .text img {
   margin: 0em 1em;
 }
 
 #specialize h4 {
+  margin-top: 0.5em;
   font-family: "Montserrat";
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 700;
   line-height: 23px;
   letter-spacing: 0em;
@@ -139,8 +147,9 @@ html {
 }
 
 #specialize p {
+  margin-top: 0.5em;
   font-family: "Montserrat";
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.20000000298023224px;
@@ -253,7 +262,6 @@ html {
 #testi .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #00525d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -651,6 +659,10 @@ html {
     width: 20%;
   }
 
+  #specialize .col img {
+    width: 5%;
+  }
+
   #specialize h4 {
     font-family: "Montserrat";
     font-size: 15px;
@@ -747,13 +759,120 @@ html {
     width: 50%;
     height: 10%;
   }
+
+  #visimisi3 {
+    padding: 3em 2em;
+    width: 100%;
+    height: auto;
+  }
+
+  #visimisi3 #left .box {
+    background: rgba(255, 255, 255, 1);
+    width: 3.5em;
+    height: 0.3em;
+  }
+
+  #visimisi3 #right .box {
+    background: rgba(255, 255, 255, 1);
+    width: 3.5em;
+    height: 0.3em;
+    display: flex;
+    justify-content: end;
+    align-content: end;
+    text-align: end;
+  }
+
+  #visimisi3 h2 {
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0.20000000298023224px;
+    color: white;
+  }
+
+  #visimisi3 p {
+    font-family: "Montserrat";
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.20000000298023224px;
+    color: white;
+  }
+
+  #visimisi3 #left {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #visimisi3 #left .col {
+    margin-top: 1em;
+    margin-bottom: 3em;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0em;
+  }
+
+  #visimisi3 #right {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #visimisi3 #right .col {
+    margin-top: 1em;
+    margin-bottom: 3em;
+    display: flex;
+    text-align: right;
+    align-items: end;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0em;
+  }
+
+  #visimisi3 img {
+    width: 50%;
+    height: 10%;
+  }
 }
 
 /* Products : */
+#boxp {
+  background-color: rgba(0, 82, 93);
+}
+#prod {
+  border-radius: 0 0 30px 30px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 30px 30px 0 0;
+}
+
+#prod .text {
+  padding: 2em 0em 0em 0em;
+  font-family: "Montserrat";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: center;
+  color: rgba(0, 82, 93, 1);
+}
+
+#prod .text img {
+  margin: 0em 1em;
+}
+
+#produ {
+  background-color: #00525d;
+}
 
 #products {
   display: flex;
   justify-content: center;
+  background-color: white;
+  border-radius: 0 0 30px 30px;
 }
 
 #products h1 {
@@ -768,6 +887,7 @@ html {
 
 #products .fill-item {
   display: flex;
+  border-radius: 0 0 30px 30px;
 }
 
 #products aside {
@@ -776,7 +896,7 @@ html {
   width: 10rem;
 }
 
-#products .selected-nav-wrapper{
+#products .selected-nav-wrapper {
   display: flex;
   flex-direction: row;
 }
@@ -784,7 +904,7 @@ html {
 #products .products-nav-text_highlighted {
   margin-left: 0.5vw;
   margin-top: 6px;
-  color: #00525D;
+  color: #00525d;
   font-family: Work Sans;
   font-size: 24px;
   font-style: normal;
@@ -803,11 +923,11 @@ html {
   cursor: pointer;
 }
 
-#products .navigationBtn{
+#products .navigationBtn {
   cursor: pointer;
 }
 
-#products #itemBtn{
+#products #itemBtn {
   margin-right: 15px;
 }
 
@@ -842,7 +962,7 @@ html {
   display: block;
   flex-direction: column;
   width: fit-content;
-  margin: 11px;
+  margin: 0.7vw;
 }
 
 #tes {
@@ -854,7 +974,7 @@ html {
 
 #pageControl {
   display: flex;
-  width: 72px;
+  width: auto;
   height: 16px;
   justify-content: space-between;
   margin-left: auto;
@@ -862,18 +982,21 @@ html {
 }
 
 #products .page-control-dot {
+  width: 1vw;
+  height: 1vw;
+  cursor: pointer;
+  margin-right: 0.7vw;
 }
 
 /* Product Card : */
 
 #products .card-image {
-  width: 261px;
+  width: 20vw;
   height: 225px;
   display: flex;
   align-items: flex-start;
   justify-content: left;
   position: relative;
-  background-image: url(img/rizki/productCard/product-cover.png);
 }
 
 #products .card-image #sale {
@@ -892,6 +1015,8 @@ html {
   left: 1%;
   right: 0;
   margin: 0;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 #products .card-image #drop {
@@ -903,7 +1028,7 @@ html {
 }
 
 #products .card-desc {
-  width: 261px;
+  width: 20vw;
   height: 130px;
   margin-top: 0;
 }
@@ -937,6 +1062,11 @@ html {
   align-items: center;
   font-family: "Montserrat", sans-serif;
   color: #737373;
+}
+
+#products #product-next,
+#products #product-back {
+  cursor: pointer;
 }
 
 /* #products .price-container {
@@ -998,8 +1128,8 @@ html {
 
 .text-section {
   height: 300px;
-  width: 900px;
-  margin-right: 100px;
+  width: 50vw;
+  margin-right: 0.3vw;
 }
 
 .topTitle {
@@ -1018,8 +1148,11 @@ li {
 }
 
 /* Contact Us : */
-
+#boxcontact {
+  background-color: #00525d;
+}
 .frame {
+  border-radius: 30px 30px 0 0;
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -1030,8 +1163,7 @@ li {
   display: flex;
   background-color: #ffffff;
   overflow-x: hidden;
-  /* width: 1238px; */
-  height: 575px;
+
   position: relative;
 }
 
@@ -1058,14 +1190,18 @@ li {
 
 .frame .small-input-button {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .frame .input-row {
   margin-top: 30px;
   margin-left: 2vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+
+.frame .input-row input {
+  margin-right: 2vw;
 }
 
 .frame .row {
@@ -1210,16 +1346,13 @@ li {
 .frame .overlap-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 40vw;
   height: 154px;
-  top: 309px;
-  left: 292px;
+  width: auto;
 }
 
 .frame .div-wrapper {
+  width: 32vw;
   display: flex;
-  width: 609px;
   height: 135px;
   align-items: flex-start;
   gap: 10px;
@@ -1256,6 +1389,7 @@ li {
 }
 
 .frame .color-primary-status {
+  margin-bottom: 2em;
   display: flex;
   width: 271px;
   align-items: center;
@@ -1370,7 +1504,7 @@ input[type="submit"] {
   color: #ffffff;
 }
 
-#footer .flex-container{
+#footer .flex-container {
   margin-top: 100px;
 }
 
