@@ -1193,6 +1193,11 @@ html {
   align-items: flex-start;
   justify-content: left;
   position: relative;
+  
+  /* Untuk gambar : */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 #products .card-image #sale {
