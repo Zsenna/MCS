@@ -23,8 +23,8 @@ html {
 }
 
 .navbar img {
-  width: 14%;
-  height: 7vh;
+  /* width: 14%; */
+  /* height: 7vh; */
 }
 
 .navbar #connav #text {
@@ -1193,7 +1193,7 @@ html {
   align-items: flex-start;
   justify-content: left;
   position: relative;
-  
+
   /* Untuk gambar : */
   background-size: contain;
   background-repeat: no-repeat;
