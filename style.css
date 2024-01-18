@@ -1031,6 +1031,26 @@ html {
     margin: 0em 1em;
     width: 20%;
   }
+
+  /* @media for  products : */
+
+  #products .title-image{
+    font-size: 6px;
+  }
+
+  #products button{
+    font-size: 7px;
+  }
+
+  #products .title{
+    font-size: 5.5px;
+  }
+
+  /* Product Item : */
+
+  .topTitle{
+    font-size: 74px;
+  }
 }
 
 /* Products : */
@@ -1230,11 +1250,11 @@ html {
 
 #products .card-desc {
   width: 20vw;
-  height: 130px;
   margin-top: 0;
 }
 
 #products .title {
+  text-align: center;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   color: #f9995d;
