@@ -1387,6 +1387,11 @@ li {
     width: 20px;
     height: 20px;
   }
+
+  .navigationBtn{
+    width: 26px;
+    height: 18px;
+  }
 }
 
 /* Contact Us : */
