@@ -4,10 +4,6 @@
   max-width: 100%;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* navbar */
 .navbar {
   width: 100%;
@@ -19,12 +15,13 @@ html {
   top: 0;
   z-index: 2;
   background-color: rgba(0, 82, 93);
-  padding: 1em 0.5em;
+  margin: 0em;
+  padding: 1em 0em;
 }
 
 .navbar img {
-  /* width: 14%; */
-  /* height: 7vh; */
+  width: 14%;
+  height: 7vh;
 }
 
 .navbar #connav #text {
@@ -160,7 +157,7 @@ html {
   width: 100%;
   height: 28vh;
   margin: 2em 0em;
-  padding: 1em 2em;
+  padding: 1em 1em;
   overflow: hidden;
   justify-content: center;
   text-align: center;
@@ -199,7 +196,7 @@ html {
 }
 
 #specialize p {
-  margin-top: 0.5em;
+  margin-top: 1em;
   font-family: "Montserrat";
   font-size: 18px;
   font-weight: 400;
@@ -626,29 +623,27 @@ html {
   background-position: 50% 50%;
 }
 
-@media screen and (max-width: 1000px) {
-  * {
-    max-width: 100%;
-  }
-
-  html {
-    scroll-behavior: smooth;
+@media (max-width: 800px) {
+  /* navbar */
+  .navbar {
+    width: 100%;
+    height: 100%;
   }
 
   .navbar #connav {
-    padding: 0.2em 0.5em;
+    margin: 0em;
+    padding: 0.5em 0em;
   }
 
-  /* navbar */
   .navbar img {
-    width: 14%;
+    width: 15%;
     height: 5vh;
   }
 
   .navbar #connav #text {
-    margin-left: 0em;
+    margin-left: 0.5em;
     font-family: "Montserrat";
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     line-height: 32px;
     letter-spacing: 0.10000000149011612px;
@@ -750,7 +745,7 @@ html {
   }
 
   /* specialize */
-  #box {
+  #boxs {
     background-color: rgba(0, 82, 93);
     width: 100%;
   }
@@ -774,7 +769,7 @@ html {
     align-items: center;
     flex-direction: column;
     gap: 3em;
-    padding: 2em 0em;
+    padding: 2em 3em;
   }
 
   #specialize .col {
@@ -792,7 +787,7 @@ html {
 
   #specialize .text {
     font-family: "Montserrat";
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 32px;
     letter-spacing: 0.10000000149011612px;
@@ -801,12 +796,12 @@ html {
   }
 
   #specialize .text img {
-    margin: 0em 1em;
-    width: 20%;
+    margin: 0em 0.5em;
+    width: 23%;
   }
 
   #specialize .col img {
-    width: 5%;
+    width: 9%;
   }
 
   #specialize h4 {
@@ -854,7 +849,7 @@ html {
 
   #visimisi1 h2 {
     font-family: "Montserrat";
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 50px;
     letter-spacing: 0.20000000298023224px;
@@ -863,7 +858,7 @@ html {
 
   #visimisi1 p {
     font-family: "Montserrat";
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.20000000298023224px;
@@ -908,15 +903,15 @@ html {
 
   #visimisi1 .bg {
     width: 30%;
-    height: 50%;
+    height: 35%;
     top: 0;
-    left: 5.5em;
+    left: 2.7em;
     position: absolute;
   }
 
   #visimisi1 .bg1 {
     width: 50%;
-    height: 55%;
+    height: 35%;
     top: 0;
     left: -2.5em;
     position: absolute;
@@ -924,10 +919,10 @@ html {
 
   #visimisi1 .bg2 {
     width: 32%;
-    height: 15%;
+    height: 13%;
     position: absolute;
-    top: 12em;
-    left: 7em;
+    top: 5.5em;
+    left: 3em;
   }
 
   #visimisi3 {
@@ -954,7 +949,7 @@ html {
 
   #visimisi3 h2 {
     font-family: "Montserrat";
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 50px;
     letter-spacing: 0.20000000298023224px;
@@ -963,7 +958,7 @@ html {
 
   #visimisi3 p {
     font-family: "Montserrat";
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.20000000298023224px;
