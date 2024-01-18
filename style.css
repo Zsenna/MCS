@@ -404,10 +404,8 @@
   z-index: 1;
   display: flex;
   transition-property: transform;
-  transition-timing-function: var(
-    --swiper-wrapper-transition-timing-function,
-    initial
-  );
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function,
+      initial);
   box-sizing: content-box;
 }
 
@@ -626,6 +624,7 @@
 }
 
 @media (max-width: 800px) {
+
   /* navbar */
   .navbar {
     width: 100%;
@@ -1058,62 +1057,6 @@
   .topTitle {
     font-size: 74px;
   }
-
-  /* Footer : */
-  #footer .container-footer {
-    background-color: #00525d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  #footer .image {
-    background-color: white;
-    width: 20%;
-    border-radius: 17px;
-    margin: 30px;
-    overflow: hidden;
-  }
-
-  #footer .navigation {
-    width: 100%;
-    position: relative;
-  }
-
-  #footer .main {
-    font-size: 14px;
-    font-family: "Montserrat", sans-serif;
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-    flex-direction: column;
-  }
-
-  #footer .flex-container {
-    margin-top: 100px;
-  }
-
-  #footer .one {
-    color: #f9995d;
-    font-size: 16px;
-  }
-
-  #footer .child {
-    font-size: 14px;
-    font-family: "Montserrat", sans-serif;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  #mcsFooter {
-    width: 267px;
-    height: 320px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 /* Products : */
@@ -1452,6 +1395,11 @@ li {
     width: 20px;
     height: 20px;
   }
+
+  .navigationBtn {
+    width: 26px;
+    height: 18px;
+  }
 }
 
 /* Contact Us : */
@@ -1741,6 +1689,8 @@ li {
   top: 187px;
 }
 
+@media screen and (max-width: 1000px) {}
+
 /* .contact-us {
   display: flex;
   flex-direction: column;
@@ -1846,4 +1796,83 @@ input[type="submit"] {
   line-height: 19px;
   color: #00525d;
   display: flex;
+}
+
+@media screen and (max-width: 1000px) {
+
+  /* @media for Footer : */
+  #footer .container-footer {
+    background-color: #00525d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #footer .image {
+    background-color: white;
+    width: 60%;
+    border-radius: 17px;
+    margin: 30px;
+    overflow: hidden;
+  }
+
+  #footer .navigation {
+    width: 100%;
+    position: relative;
+  }
+
+  #footer .main {
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    flex-direction: column;
+  }
+
+  #footer .flex-container {
+    margin-left: 4vw;
+    margin-top: 20px;
+  }
+
+  #footer p {
+    margin-bottom: 0.5rem;
+  }
+
+  #footer .one {
+    color: #f9995d;
+    font-size: 16px;
+  }
+
+  #footer .child {
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #mcsFooter {
+    width: 267px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .frame .required-yes,
+  .frame .email-wrapper,
+  .frame .required-yes-2,
+  .frame .required-no-dropdown{
+    width: 40vw;
+  }
+
+  .frame .overlap-group{
+    width: 82vw;
+  }
+
+  .frame .div-wrapper{
+    width: 100%;
+  }
 }
