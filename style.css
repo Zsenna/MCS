@@ -140,6 +140,7 @@ html {
 #boxs {
   background: #00525d;
 }
+
 #specialize {
   width: 100%;
   height: 100%;
@@ -387,7 +388,7 @@ html {
   text-align: center;
   font-size: 18px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
@@ -399,16 +400,15 @@ html {
 }
 
 #testi .swiper-wrapper {
+  justify-content: left;
   position: relative;
   width: 100%;
   height: 70%;
   z-index: 1;
   display: flex;
   transition-property: transform;
-  transition-timing-function: var(
-    --swiper-wrapper-transition-timing-function,
-    initial
-  );
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function,
+      initial);
   box-sizing: content-box;
 }
 
@@ -1018,6 +1018,7 @@ html {
     align-items: center;
     flex-direction: column;
   }
+
   #boxp .text {
     font-family: "Montserrat";
     font-size: 20px;
@@ -1027,6 +1028,7 @@ html {
     text-align: center;
     color: rgba(0, 82, 93, 1);
   }
+
   #boxp .text img {
     margin: 0em 1em;
     width: 20%;
@@ -1037,6 +1039,7 @@ html {
 #boxp {
   background-color: rgba(0, 82, 93);
 }
+
 #prod {
   border-radius: 0 0 30px 30px;
   width: 100%;
@@ -1352,6 +1355,7 @@ li {
 #boxcontact {
   background-color: #00525d;
 }
+
 .frame {
   border-radius: 30px 30px 0 0;
   background-color: #ffffff;
