@@ -39,40 +39,40 @@ document.addEventListener('DOMContentLoaded', function () {
     // Sembunyikan :
     const dropElements = document.querySelectorAll('.card-image #drop');
 
-    // Hide all "card-desc" elements initially
-    const cardDescElements = document.querySelectorAll('.card-desc');
-    cardDescElements.forEach(cardDesc => {
-        cardDesc.setAttribute('hidden', 'true');
-    });
+    // // Hide all "card-desc" elements initially
+    // const cardDescElements = document.querySelectorAll('.card-desc');
+    // cardDescElements.forEach(cardDesc => {
+    //     cardDesc.setAttribute('hidden', 'true');
+    // });
 
-    // Add event listeners to each "drop" element
-    dropElements.forEach((drop, index) => {
-        // Get the corresponding "card-desc" element
-        const cardDesc = document.querySelectorAll('.card-desc')[index];
+    // // Add event listeners to each "drop" element
+    // dropElements.forEach((drop, index) => {
+    //     // Get the corresponding "card-desc" element
+    //     const cardDesc = document.querySelectorAll('.card-desc')[index];
 
-        // Add event listeners for hover
-        drop.addEventListener('mouseover', () => {
-            cardDesc.removeAttribute('hidden');  // Show the corresponding card-desc
-        });
+    //     // Add event listeners for hover
+    //     drop.addEventListener('mouseover', () => {
+    //         cardDesc.removeAttribute('hidden');  // Show the corresponding card-desc
+    //     });
 
-        // Add event listener for mouseout on the drop element
-        drop.addEventListener('mouseout', () => {
-            // Check if the mouse is not over the card-desc before hiding it
-            if (!isMouseOverElement(cardDesc)) {
-                cardDesc.setAttribute('hidden', 'true'); // Hide the corresponding card-desc
-            }
-        });
+    //     // Add event listener for mouseout on the drop element
+    //     drop.addEventListener('mouseout', () => {
+    //         // Check if the mouse is not over the card-desc before hiding it
+    //         if (!isMouseOverElement(cardDesc)) {
+    //             cardDesc.setAttribute('hidden', 'true'); // Hide the corresponding card-desc
+    //         }
+    //     });
 
-        // Add event listener for mouseover on the card-desc itself
-        cardDesc.addEventListener('mouseover', () => {
-            cardDesc.removeAttribute('hidden');  // Show the corresponding card-desc
-        });
+    //     // Add event listener for mouseover on the card-desc itself
+    //     cardDesc.addEventListener('mouseover', () => {
+    //         cardDesc.removeAttribute('hidden');  // Show the corresponding card-desc
+    //     });
 
-        // Add event listener for mouseout on the card-desc itself
-        cardDesc.addEventListener('mouseout', () => {
-            cardDesc.setAttribute('hidden', 'true'); // Hide the corresponding card-desc
-        });
-    });
+    //     // Add event listener for mouseout on the card-desc itself
+    //     cardDesc.addEventListener('mouseout', () => {
+    //         cardDesc.setAttribute('hidden', 'true'); // Hide the corresponding card-desc
+    //     });
+    // });
 
     // Function to check if the mouse is over an element
     function isMouseOverElement(element) {
@@ -149,21 +149,30 @@ document.addEventListener('DOMContentLoaded', function () {
             productsArray.filter(product => product.CATEGORY === highlighted_nav).length;
 
         const totalPages = Math.ceil(totalDivisionProducts / productsPerPage);
+        
+        // Iterate over each product card and check the "title" class value
+        document.querySelectorAll('.product-card').forEach((productCard, index) => {
+            const title = productCard.querySelector('.title').innerText.trim();
+
+            // Set product card visibility based on the "title" class value
+            productCard.style.display = title === '' ? 'none' : 'block';
+        });
+
         // Generate new dots based on the total pages
         console.log(currentPage);
         for (let i = 0; i < totalPages; i++) {
             const dot = document.createElement('img');
             dot.classList.add('page-control-dot');
-        
+
             // Adjusted to start from 1-based index
             dot.id = `dotPage${i + 1}`;
-        
+
             // Highlight the current page dot
             if (i === currentPage - 1) {
                 dot.src = 'img/rizki/Product/currentBtn.png';
             } else {
                 dot.src = 'img/rizki/Product/otherPageBtn.png';
-        
+
                 // Add classes only for the dots immediately before and after the current page
                 if (i === currentPage - 2) { // Dot immediately before the current page
                     dot.classList.add('_before');
@@ -171,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     dot.classList.add('_after');
                 }
             }
-        
+
             // Add a click event listener to navigate to the corresponding page
             dot.addEventListener('click', function () {
                 currentPage = i + 1;
@@ -179,11 +188,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 updatePageControl();
                 firstLoad = false;
             });
-        
+
             // Append the dot to the page control container
             pageControlContainer.appendChild(dot);
         }
-        
+
     }
 
     // console.log(currentPage);
@@ -217,20 +226,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 ? productsSteris.slice(endIndex)
                 : productsBahanBaku.filter((product) => product.CATEGORY === highlighted_nav).slice(endIndex);
 
-            // Loop through each product-card to check and hide if principal is blank
-            const productCards = document.querySelectorAll('.product-card');
-            productCards.forEach((productCard, index) => {
-                const principalId = `principal${index + 1}`;
-                const principalElement = document.getElementById(principalId);
-
-                if (principalElement && principalElement.innerText.trim() === '') {
-                    // If principal is blank, make the product-card invisible
-                    productCard.style.visibility = 'hidden';
-                } else {
-                    // Otherwise, make the product-card visible
-                    productCard.style.visibility = 'visible';
-                }
-            });
 
             if (remainingProducts.length === 0 || currentPage >= totalPages) {
 
@@ -240,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     nextButton.disabled = true;
                 }
             } else if (allowedIncrement === true) {
-                
+
                 currentPage++;
             }
         }
@@ -319,22 +314,22 @@ document.addEventListener('DOMContentLoaded', function () {
             const productId = i;
             const productCard = document.getElementById(`product${productId}`);
             const cardImage = document.getElementById(`card${productId}`);
-        
+
             for (let i = 1; i <= productsPerPage; i++) {
                 const product = products[i - 1];
                 const productId = i;
                 const productCard = document.getElementById(`product${productId}`);
                 const cardImage = document.getElementById(`card${productId}`);
-            
+
                 if (productCard) {
                     productCard.style.display = 'block';
-            
+
                     // Check if the product is defined
                     if (product) {
                         let productName;
                         let principal;
                         let category;
-                    
+
                         if (highlighted_nav === 'STERIS') {
                             productName = product['Nama Barang'] || '';
                             principal = product['Klasifikasi Produk'] || product.PRINCIPAL || '';
@@ -344,16 +339,16 @@ document.addEventListener('DOMContentLoaded', function () {
                             principal = product['Klasifikasi Produk'] || product.PRINCIPAL || '';
                             category = '';
                         }
-                    
+
                         document.getElementById(`product${productId}`).innerText = productName;
                         document.getElementById(`principal${productId}`).innerText = principal;
                         document.getElementById(`category${productId}`).innerText = category;
-                    
+
                         // Check if the product belongs to Steris and has a valid image name
                         if (highlighted_nav === 'STERIS' && product['Nama Barang']) {
                             const imageName = product['Nama Barang'].trim().replace(/\s+/g, '_');
                             const imagePath = `img/steris/${imageName}.jpg`;
-                    
+
                             // Check if the image exists, set the background, otherwise set the default background
                             const imageExists = new Image();
                             imageExists.src = imagePath;
@@ -368,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             // For other navs, check if the 'PRODUCT' property exists and use it for the image
                             const imageName = product['PRODUCT'].trim().replace(/\s+/g, '_');
                             const imagePath = `img/${highlighted_nav.toLowerCase()}/${imageName}.jpg`;
-                    
+
                             // Check if the image exists, set the background, otherwise set the default background
                             const imageExists = new Image();
                             imageExists.src = imagePath;
@@ -390,13 +385,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         document.getElementById(`category${productId}`).innerText = '';
                         cardImage.style.backgroundImage = 'url(img/rizki/productCard/product-cover.png)';
                     }
-                    
+
                 }
             }
-            
-            
+
+
         }
-        
+
 
         // Hide unused section
     }
@@ -406,24 +401,24 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listeners for navigation buttons
     const nextButton = document.getElementById('product-next');
     if (nextButton) {
-        nextButton.addEventListener('click', function() {
+        nextButton.addEventListener('click', function () {
             const dotAfter = document.querySelector('._after'); // Find the dot with the _after class
             if (dotAfter) {
                 dotAfter.click(); // Mimic a click on the dot
             }
         });
     }
-    
+
     const backButton = document.getElementById('product-back');
     if (backButton) {
-        backButton.addEventListener('click', function() {
+        backButton.addEventListener('click', function () {
             const dotBefore = document.querySelector('._before'); // Find the dot with the _before class
             if (dotBefore) {
                 dotBefore.click(); // Mimic a click on the dot
             }
         });
     }
-    
+
 
     // Akal2 in iniasisasi pas first page load :
     productNavItems[0].click();
