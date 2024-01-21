@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Form Data</h2>
+
+<!-- Form -->
+<form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="yourName" name="yourName" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="e-mail" name="e-mail" required><br>
+
+    <label for="reason">Reason:</label>
+    <input type="text" id="reason" name="reason" required><br>
+
+    <label for="phone">Phone:</label>
+    <input type="number" id="phoneNo" name="phoneNo" required><br>
+
+    <label for="message">Message:</label>
+    <input type="text" id="message" name="message" required><br>
+
+    <button type="button" onclick="submitToWa()()">Submit</button>
+</form>
+
+<!-- Display Data -->
+<div id="displayData"></div>
+
+<script>
+    function submitToWa() {
+        // Mendapatkan nilai dari form
+        var name = document.getElementById("yourName").value;
+        var email = document.getElementById("e-mail").value;
+        var reason = document.getElementById("reason").value;
+        var phone = document.getElementById("phoneNo").value;
+        var message = document.getElementById("message").value;
+        var linkWa = "https://wa.me/62085925000723?text=* Nama :* "+ name +" %0A *Email :* "+email+" %0A *Reason :* "+reason+ "%0A *Phone :* "+phone+ "%0A *Message :* "+message;
+        window.location.href = linkWa;
+    }
+</script>
+
+</body>
+</html>
