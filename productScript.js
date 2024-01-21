@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // console.log(currentPage);
 
   // Set value untuk data dari Products :
-  const productsPerPage = 9; /*  */
+  const productsPerPage = 6; /*  */
   const totalProducts = productsBahanBaku.length;
 
   function showNextPage(allowedIncrement) {
