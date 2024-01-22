@@ -1681,7 +1681,8 @@ li {
 
   #products .card-image,
   #products .card-desc{
-    width: 30vw;
+    height: 90px;
+    /* width: 30vw; */
   }
 
   .topTitle {
@@ -1694,8 +1695,13 @@ li {
 
   #products #product-next,
   #products #product-back {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  #products .page-control-dot{
+    width: 2.5vw;
+    height: 2.5vw;
   }
 
   .navigationBtn {
