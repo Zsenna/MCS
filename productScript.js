@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // console.log(currentPage);
 
   // Set value untuk data dari Products :
-  const productsPerPage = 9; /*  */
+  const productsPerPage = window.innerWidth < 1000 ? 6 : 9; /*  */
   const totalProducts = productsBahanBaku.length;
 
   function showNextPage(allowedIncrement) {
@@ -219,194 +219,194 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateProductDisplay(products) {
-    console.log("updateProduct");
-    const productsPerPage = 9;
-    let index = 1;
+  console.log("updateProduct");
 
-    // Reset topTitles
-    for (let i = 1; i <= 9; i++) {
-      const topTitle = document.getElementById(`topTitle${i}`);
-      topTitle.innerText = "";
-      topTitle.style.display = "none";
+  const productsPerPage = window.innerWidth < 1000 ? 6 : 9;
+  let index = 1;
+  let displayedProducts = 0;
 
-      const ulTopTitle = document.getElementById(`ulTopTitle${i}`);
-      ulTopTitle.innerHTML = "";
-    }
+  // Reset topTitles
+  for (let i = 1; i <= 9; i++) {
+    const topTitle = document.getElementById(`topTitle${i}`);
+    topTitle.innerText = "";
+    topTitle.style.display = "none";
 
-    let displayedProducts = 0;
-
-    // Group products based on the first letter
-    const groupedProducts = {};
-    products.forEach((product) => {
-      let key;
-      if (highlighted_nav === "STERIS") {
-        key =
-          product && product["Nama Barang"]
-            ? product["Nama Barang"][0].toUpperCase()
-            : "";
-      } else {
-        key =
-          product && product["PRODUCT"]
-            ? product["PRODUCT"][0].toUpperCase()
-            : "";
-      }
-
-      if (!groupedProducts[key]) {
-        groupedProducts[key] = [];
-      }
-      groupedProducts[key].push(product);
-    });
-
-    // Display grouped products in alphabetical order
-    const sortedKeys = Object.keys(groupedProducts).sort();
-
-    sortedKeys.forEach((key) => {
-      const topTitle = document.getElementById(`topTitle${index}`);
-      const ulTopTitle = document.getElementById(`ulTopTitle${index}`);
-
-      topTitle.innerText = key;
-
-      if (
-        highlighted_nav === "STERIS" &&
-        displayedProducts + groupedProducts[key].length > productsPerPage
-      ) {
-        // If adding this section would exceed the productsPerPage limit, don't display it
-        topTitle.style.display = "none";
-      } else {
-        topTitle.style.display = "block";
-
-        groupedProducts[key]
-          .sort((a, b) => {
-            const property =
-              highlighted_nav === "STERIS" ? "Nama Barang" : "PRODUCT";
-            return ((a && a[property]) || "").localeCompare(
-              (b && b[property]) || ""
-            );
-          })
-          .forEach((product) => {
-            if (displayedProducts < productsPerPage) {
-              const li = document.createElement("li");
-              const property =
-                highlighted_nav === "STERIS" ? "Nama Barang" : "PRODUCT";
-              li.innerText = (product && product[property]) || "";
-              ulTopTitle.appendChild(li);
-              displayedProducts++;
-            }
-          });
-
-        index++;
-      }
-    });
-
-    // Update product card display
-    for (let i = 1; i <= productsPerPage; i++) {
-      const product = products[i - 1];
-      const productId = i;
-      const productCard = document.getElementById(`product${productId}`);
-      const cardImage = document.getElementById(`card${productId}`);
-
-      // Check if screen width is under 1000 pixels
-      if (window.innerWidth < 1000) {
-        // Skip rendering for elements with IDs product3, product6, product9
-        if (i % 3 === 0) {
-          productCard.style.display = "none";
-          continue; // Skip to the next iteration
-        }
-      }
-
-      productCard.style.display = "block";
-
-      // Check if the product is defined
-      if (product) {
-        let productName;
-        let principal;
-        let category;
-
-        if (highlighted_nav === "STERIS") {
-          productName = product["Nama Barang"] || "";
-          principal = product["Klasifikasi Produk"] || product.PRINCIPAL || "";
-          category = "";
-        } else {
-          productName = product["PRODUCT"] || "";
-          principal = product["Klasifikasi Produk"] || product.PRINCIPAL || "";
-          category = "";
-        }
-
-        document.getElementById(`product${productId}`).innerText = productName;
-        document.getElementById(`principal${productId}`).innerText = principal;
-        document.getElementById(`category${productId}`).innerText = category;
-
-        // Check if the product belongs to Steris and has a valid image name
-        if (highlighted_nav === "STERIS" && product["Nama Barang"]) {
-          const imageName = product["Nama Barang"]
-            .trim()
-            .replace(/\s+/g, "_");
-          const imagePath = `img/steris/${imageName}.jpg`;
-
-          // Check if the image exists, set the background, otherwise set the default background
-          const imageExists = new Image();
-          imageExists.src = imagePath;
-          imageExists.onload = () => {
-            cardImage.style.backgroundImage = `url(${imagePath})`;
-            cardImage.style.backgroundSize = "cover";
-          };
-          imageExists.onerror = () => {
-            cardImage.style.backgroundImage =
-              "url(img/rizki/productCard/product-cover.png)";
-          };
-        } else if (highlighted_nav !== "STERIS" && product["PRODUCT"]) {
-          // For other navs, check if the 'PRODUCT' property exists and use it for the image
-          const imageName = product["PRODUCT"].trim().replace(/\s+/g, "_");
-          const imagePath = `img/${highlighted_nav.toLowerCase()}/${imageName}.jpg`;
-
-          // Check if the image exists, set the background, otherwise set the default background
-          const imageExists = new Image();
-          imageExists.src = imagePath;
-          imageExists.onload = () => {
-            cardImage.style.backgroundImage = `url(${imagePath})`;
-            cardImage.style.backgroundSize = "cover";
-          };
-          imageExists.onerror = () => {
-            cardImage.style.backgroundImage =
-              "url(img/rizki/productCard/product-cover.png)";
-          };
-        } else {
-          // If the product is not from Steris or does not have a valid image name, set a default background
-          cardImage.style.backgroundImage =
-            "url(img/rizki/productCard/product-cover.png)";
-        }
-
-        // Set product content on the next product card
-        if (i % 3 === 0 && i < productsPerPage) {
-          const nextProductId = i + 1;
-          const nextProductCard = document.getElementById(`product${nextProductId}`);
-          const nextCardImage = document.getElementById(`card${nextProductId}`);
-
-          if (nextProductCard) {
-            nextProductCard.style.display = "block";
-            document.getElementById(`product${nextProductId}`).innerText = productName;
-            document.getElementById(`principal${nextProductId}`).innerText = principal;
-            document.getElementById(`category${nextProductId}`).innerText = category;
-
-            // Set background image for the next product card
-            nextCardImage.style.backgroundImage = cardImage.style.backgroundImage;
-            nextCardImage.style.backgroundSize = cardImage.style.backgroundSize;
-
-            // Hide the current product card
-            productCard.style.display = "none";
-          }
-        }
-      } else {
-        // If the product is undefined, set the content to an empty string
-        document.getElementById(`product${productId}`).innerText = "";
-        document.getElementById(`principal${productId}`).innerText = "";
-        document.getElementById(`category${productId}`).innerText = "";
-        cardImage.style.backgroundImage =
-          "url(img/rizki/productCard/product-cover.png)";
-      }
-    }
-
+    const ulTopTitle = document.getElementById(`ulTopTitle${i}`);
+    ulTopTitle.innerHTML = "";
   }
+
+  // Group products based on the first letter
+  const groupedProducts = {};
+  products.forEach((product) => {
+    let key;
+    if (highlighted_nav === "STERIS") {
+      key = product && product["Nama Barang"] ? product["Nama Barang"][0].toUpperCase() : "";
+    } else {
+      key = product && product["PRODUCT"] ? product["PRODUCT"][0].toUpperCase() : "";
+    }
+
+    if (!groupedProducts[key]) {
+      groupedProducts[key] = [];
+    }
+    groupedProducts[key].push(product);
+  });
+
+  // Display grouped products in alphabetical order
+  const sortedKeys = Object.keys(groupedProducts).sort();
+
+  sortedKeys.forEach((key) => {
+    const topTitle = document.getElementById(`topTitle${index}`);
+    const ulTopTitle = document.getElementById(`ulTopTitle${index}`);
+
+    topTitle.innerText = key;
+
+    if (displayedProducts + groupedProducts[key].length > productsPerPage) {
+      // If adding this section would exceed the productsPerPage limit, don't display it
+      topTitle.style.display = "none";
+    } else {
+      topTitle.style.display = "block";
+
+      groupedProducts[key]
+        .sort((a, b) => {
+          const property = highlighted_nav === "STERIS" ? "Nama Barang" : "PRODUCT";
+          return ((a && a[property]) || "").localeCompare((b && b[property]) || "");
+        })
+        .forEach((product) => {
+          if (displayedProducts < productsPerPage) {
+            const li = document.createElement("li");
+            const property = highlighted_nav === "STERIS" ? "Nama Barang" : "PRODUCT";
+            li.innerText = (product && product[property]) || "";
+            ulTopTitle.appendChild(li);
+            displayedProducts++;
+
+            // Place the product on the next product card if needed
+            if (displayedProducts % 3 === 0 && displayedProducts < productsPerPage) {
+              const nextProductId = displayedProducts + 1;
+              const nextProductCard = document.getElementById(`product${nextProductId}`);
+              const nextCardImage = document.getElementById(`card${nextProductId}`);
+
+              if (nextProductCard) {
+                nextProductCard.style.display = "block";
+                const nextProductName = (product && product[property]) || "";
+                const nextPrincipal = product && product["Klasifikasi Produk"] || product.PRINCIPAL || "";
+                const nextCategory = "";
+                document.getElementById(`product${nextProductId}`).innerText = nextProductName;
+                document.getElementById(`principal${nextProductId}`).innerText = nextPrincipal;
+                document.getElementById(`category${nextProductId}`).innerText = nextCategory;
+
+                // Set background image for the next product card
+                const imageName = nextProductName.trim().replace(/\s+/g, "_");
+                const imagePath = highlighted_nav === "STERIS" ? `img/steris/${imageName}.jpg` : `img/${highlighted_nav.toLowerCase()}/${imageName}.jpg`;
+
+                const imageExists = new Image();
+                imageExists.src = imagePath;
+                imageExists.onload = () => {
+                  nextCardImage.style.backgroundImage = `url(${imagePath})`;
+                  nextCardImage.style.backgroundSize = "cover";
+                };
+                imageExists.onerror = () => {
+                  nextCardImage.style.backgroundImage = "url(img/rizki/productCard/product-cover.png)";
+                };
+
+                // Hide the current product card
+                const currentProductId = displayedProducts - 2;
+                const currentProductCard = document.getElementById(`product${currentProductId}`);
+                if (currentProductCard) {
+                  currentProductCard.style.display = "none";
+                }
+              }
+            }
+          }
+        });
+
+      index++;
+    }
+  });
+
+  // Update product card display
+  for (let i = 1; i <= productsPerPage; i++) {
+    const product = products[i - 1];
+    const productId = i;
+    const productCard = document.getElementById(`product${productId}`);
+    const cardImage = document.getElementById(`card${productId}`);
+
+    // Check if screen width is under 1000 pixels
+    if (window.innerWidth < 1000) {
+      // Skip rendering for elements with IDs product3, product6, product9
+      if (i % 3 === 0) {
+        productCard.style.display = "none";
+        continue; // Skip to the next iteration
+      }
+    }
+
+    productCard.style.display = "block";
+
+    // Check if the product is defined
+    if (product) {
+      let productName;
+      let principal;
+      let category;
+
+      if (highlighted_nav === "STERIS") {
+        productName = product["Nama Barang"] || "";
+        principal = product["Klasifikasi Produk"] || product.PRINCIPAL || "";
+        category = "";
+      } else {
+        productName = product["PRODUCT"] || "";
+        principal = product["Klasifikasi Produk"] || product.PRINCIPAL || "";
+        category = "";
+      }
+
+      document.getElementById(`product${productId}`).innerText = productName;
+      document.getElementById(`principal${productId}`).innerText = principal;
+      document.getElementById(`category${productId}`).innerText = category;
+
+      // Check if the product belongs to Steris and has a valid image name
+      if (highlighted_nav === "STERIS" && product["Nama Barang"]) {
+        const imageName = product["Nama Barang"]
+          .trim()
+          .replace(/\s+/g, "_");
+        const imagePath = `img/steris/${imageName}.jpg`;
+
+        // Check if the image exists, set the background, otherwise set the default background
+        const imageExists = new Image();
+        imageExists.src = imagePath;
+        imageExists.onload = () => {
+          cardImage.style.backgroundImage = `url(${imagePath})`;
+          cardImage.style.backgroundSize = "cover";
+        };
+        imageExists.onerror = () => {
+          cardImage.style.backgroundImage = "url(img/rizki/productCard/product-cover.png)";
+        };
+      } else if (highlighted_nav !== "STERIS" && product["PRODUCT"]) {
+        // For other navs, check if the 'PRODUCT' property exists and use it for the image
+        const imageName = product["PRODUCT"].trim().replace(/\s+/g, "_");
+        const imagePath = `img/${highlighted_nav.toLowerCase()}/${imageName}.jpg`;
+
+        // Check if the image exists, set the background, otherwise set the default background
+        const imageExists = new Image();
+        imageExists.src = imagePath;
+        imageExists.onload = () => {
+          cardImage.style.backgroundImage = `url(${imagePath})`;
+          cardImage.style.backgroundSize = "cover";
+        };
+        imageExists.onerror = () => {
+          cardImage.style.backgroundImage = "url(img/rizki/productCard/product-cover.png)";
+        };
+      } else {
+        // If the product is not from Steris or does not have a valid image name, set a default background
+        cardImage.style.backgroundImage = "url(img/rizki/productCard/product-cover.png)";
+      }
+    } else {
+      // If the product is undefined, set the content to an empty string
+      document.getElementById(`product${productId}`).innerText = "";
+      document.getElementById(`principal${productId}`).innerText = "";
+      document.getElementById(`category${productId}`).innerText = "";
+      cardImage.style.backgroundImage = "url(img/rizki/productCard/product-cover.png)";
+    }
+  }
+}
+
 
   updatePageControl();
 

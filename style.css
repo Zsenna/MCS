@@ -1679,6 +1679,11 @@ li {
     font-size: 13px;
   }
 
+  #products .card-image,
+  #products .card-desc{
+    width: 30vw;
+  }
+
   .topTitle {
     font-size: 12px;
   }
