@@ -1952,14 +1952,19 @@ input[type="submit"] {
 
 #footer .flex-container {
   margin-top: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
-#footer p {
+#footer a {
+  color: white;
+  text-decoration: none;
   transition: color 0.2s ease;
   cursor: pointer;
+  margin-bottom: 20px;
 } 
 
-#footer p:hover {
+#footer a:hover {
   color: #f9995d;
 }
 
@@ -2035,6 +2040,18 @@ input[type="submit"] {
   #footer .flex-container {
     margin-left: 4vw;
     margin-top: 20px;
+  }
+
+  #footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  } 
+  
+  #footer a:hover {
+    color: #f9995d;
   }
 
   #footer p {
