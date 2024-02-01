@@ -168,7 +168,7 @@
 #specialize1 #kebijakan {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: vertical;
   flex-direction: row;
   gap: 3em;
   padding: 0em 27em;
@@ -195,7 +195,7 @@
 
 #specialize1 #kebijakan .box {
   width: 100%;
-  height: 50vh;
+  height: 40vh;
   margin: 2em 0em;
   padding: 1em 1em;
   overflow: hidden;
@@ -210,7 +210,6 @@
 #specialize1 #kebijakan .text {
   width: 100%;
   height: auto;
-  margin: 0em 0em 12em 0em;
   overflow: visible;
   justify-content: center;
 }
@@ -237,93 +236,6 @@
 }
 
 #specialize1 p {
-  margin-top: 1em;
-  font-family: "Montserrat";
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.20000000298023224px;
-  text-align: center;
-  color: rgba(115, 115, 115, 1);
-}
-
-/* specialize2 */
-#boxs2 {
-  background: white;
-}
-
-#specialize2 #kebijakan {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 3em;
-  padding: 0em 27em;
-}
-
-#specialize2 .text1 {
-  margin-top: 0em;
-  padding-top: 1em;
-  font-family: "Montserrat";
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 32px;
-  text-align: center;
-  color: rgba(0, 82, 93, 1);
-}
-
-#specialize2 .col img {
-  width: 10%;
-}
-
-#specialize2 .text1 img {
-  margin: 0em 1em;
-}
-
-#specialize2 #kebijakan .box {
-  width: 100%;
-  height: 40vh;
-  margin: 2em 0em;
-  padding: 1em 1em;
-  overflow: hidden;
-  justify-content: center;
-  text-align: center;
-  border: 1px solid grey;
-  box-shadow: 10px 10px 10px #88888849;
-  background-color: white;
-  border-radius: 5px;
-}
-
-#specialize2 #kebijakan .text {
-  width: 100%;
-  height: auto;
-  margin: 0em 0em 7em 0em;
-  overflow: visible;
-  justify-content: center;
-}
-
-#specialize2 #kebijakan .text p {
-  margin-top: 1em;
-  font-family: "Montserrat";
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: justify;
-  color: rgba(115, 115, 115, 1);
-}
-
-#specialize2 h4 {
-  margin-top: 0.5em;
-  font-family: "Montserrat";
-  font-size: 23px;
-  font-weight: 700;
-  line-height: 23px;
-  letter-spacing: 0em;
-  text-align: center;
-  color: rgba(0, 82, 93, 1);
-}
-
-#specialize2 p {
   margin-top: 1em;
   font-family: "Montserrat";
   font-size: 18px;
@@ -547,8 +459,10 @@
   z-index: 1;
   display: flex;
   transition-property: transform;
-  transition-timing-function: var(--swiper-wrapper-transition-timing-function,
-      initial);
+  transition-timing-function: var(
+    --swiper-wrapper-transition-timing-function,
+    initial
+  );
   box-sizing: content-box;
 }
 
@@ -768,8 +682,91 @@
   background-position: 50% 50%;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
+  /* specialize1 */
+  #specialize1 #kebijakan {
+    display: flex;
+    justify-content: center;
+    align-items: vertical;
+    flex-direction: row;
+    gap: 3em;
+    padding: 0em 23em;
+  }
 
+  #specialize1 .text1 {
+    margin-top: 0em;
+    padding-top: 1em;
+    font-family: "Montserrat";
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: center;
+    color: white;
+  }
+
+  #specialize1 .col img {
+    width: 10%;
+  }
+
+  #specialize1 .text1 img {
+    margin: 0em 1em;
+  }
+
+  #specialize1 #kebijakan .box {
+    width: 100%;
+    height: 40vh;
+    margin: 2em 0em;
+    padding: 1em 1em;
+    overflow: hidden;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid grey;
+    box-shadow: 10px 10px 10px #88888849;
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  #specialize1 #kebijakan .text {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    justify-content: center;
+  }
+
+  #specialize1 #kebijakan .text p {
+    margin-top: 1em;
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    color: rgba(115, 115, 115, 1);
+  }
+
+  #specialize1 h4 {
+    margin-top: 0.5em;
+    font-family: "Montserrat";
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(0, 82, 93, 1);
+  }
+
+  #specialize1 p {
+    margin-top: 1em;
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: center;
+    color: rgba(115, 115, 115, 1);
+  }
+}
+
+@media (max-width: 1200px) {
   /* navbar */
   .navbar {
     width: 100%;
@@ -947,8 +944,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1em;
-    padding: 0em 2em;
+    gap: 0em;
+    padding: 0em 8em;
     height: auto;
   }
 
@@ -974,8 +971,8 @@
 
   #specialize1 #kebijakan .text {
     width: 100%;
-    height: 30vh;
-    margin: 4em 0em 4em 0em;
+    height: 20vh;
+    margin: 0em 0em 2em 0em;
     overflow: visible;
     justify-content: center;
   }
@@ -985,7 +982,7 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
-    text-align: justify;
+    text-align: center;
     color: rgba(115, 115, 115, 1);
   }
 
@@ -1000,74 +997,6 @@
   }
 
   #specialize1 p {
-    font-family: "Montserrat";
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.20000000298023224px;
-    text-align: center;
-    color: rgba(115, 115, 115, 1);
-  }
-
-  /* specialize2 */
-  #specialize2 #kebijakan {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1em;
-    padding: 0em 2em;
-    height: auto;
-  }
-
-  #specialize2 .text1 {
-    margin-top: 0em;
-    padding-top: 1em;
-    font-family: "Montserrat";
-    font-size: 25px;
-    font-weight: 700;
-    line-height: 32px;
-    text-align: center;
-    color: rgba(0, 82, 93, 1);
-  }
-
-  #specialize2 .text1 img {
-    display: none;
-  }
-
-  #specialize2 #kebijakan .box {
-    width: 100%;
-    height: auto;
-  }
-
-  #specialize2 #kebijakan .text {
-    width: 100%;
-    height: 30vh;
-    margin: 4em 0em 4em 0em;
-    overflow: visible;
-    justify-content: center;
-  }
-
-  #specialize2 #kebijakan .text p {
-    font-family: "Montserrat";
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 20px;
-    text-align: justify;
-    color: rgba(115, 115, 115, 1);
-  }
-
-  #specialize2 h4 {
-    font-family: "Montserrat";
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 23px;
-    letter-spacing: 0em;
-    text-align: center;
-    color: rgba(0, 82, 93, 1);
-  }
-
-  #specialize2 p {
     font-family: "Montserrat";
     font-size: 12px;
     font-weight: 400;
@@ -1226,6 +1155,76 @@
 
   .topTitle {
     font-size: 74px;
+  }
+}
+
+@media (max-width: 800px) {
+  /* specialize1 */
+  #specialize1 #kebijakan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0em;
+    padding: 0em 2em;
+    height: auto;
+  }
+
+  #specialize1 .text1 {
+    margin-top: 0em;
+    padding-top: 1em;
+    font-family: "Montserrat";
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: center;
+    color: white;
+  }
+
+  #specialize1 .text1 img {
+    display: none;
+  }
+
+  #specialize1 #kebijakan .box {
+    width: 100%;
+    height: auto;
+  }
+
+  #specialize1 #kebijakan .text {
+    width: 100%;
+    height: 25vh;
+    margin: 0em 0em 3em 0em;
+    overflow: visible;
+    justify-content: center;
+  }
+
+  #specialize1 #kebijakan .text p {
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    color: rgba(115, 115, 115, 1);
+  }
+
+  #specialize1 h4 {
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(0, 82, 93, 1);
+  }
+
+  #specialize1 p {
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: center;
+    color: rgba(115, 115, 115, 1);
   }
 }
 
@@ -1877,7 +1876,8 @@ li {
   top: 187px;
 }
 
-@media screen and (max-width: 1000px) {}
+@media screen and (max-width: 1000px) {
+}
 
 /* .contact-us {
   display: flex;
@@ -1988,7 +1988,6 @@ input[type="submit"] {
 }
 
 @media screen and (max-width: 1000px) {
-
   /* @media for Footer : */
   #footer .container-footer {
     background-color: #00525d;
