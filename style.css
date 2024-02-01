@@ -1954,9 +1954,22 @@ input[type="submit"] {
   margin-top: 100px;
 }
 
+#footer p {
+  transition: color 0.2s ease;
+  cursor: pointer;
+} 
+
+#footer p:hover {
+  color: #f9995d;
+}
+
 #footer .one {
   color: #f9995d;
   font-size: 16px;
+}
+
+#footer .socialMediaIcon{
+  cursor: pointer;
 }
 
 #footer .child {
