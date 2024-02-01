@@ -81,6 +81,14 @@
   height: 100%;
 }
 
+#home1 #prev {
+  width: 8%;
+}
+
+#home1 #next {
+  width: 8%;
+}
+
 #home2 {
   display: flex;
   justify-content: center;
@@ -108,6 +116,14 @@
 #home2 #carouselExampleIndicators {
   width: 100%;
   height: 100%;
+}
+
+#home2 #prev {
+  width: 8%;
+}
+
+#home2 #next {
+  width: 8%;
 }
 
 #home3 {
@@ -466,6 +482,14 @@
   right: 0;
 }
 
+#visimisi1 #prev {
+  width: 8%;
+}
+
+#visimisi1 #next {
+  width: 8%;
+}
+
 #visimisi3 {
   padding: 6em 12em;
   width: 100%;
@@ -538,6 +562,14 @@
   height: 10%;
 }
 
+#visimisi3 #prev {
+  width: 8%;
+}
+
+#visimisi3 #next {
+  width: 8%;
+}
+
 /* testimoni */
 #testi .swiper {
   margin-top: 80px;
@@ -549,7 +581,7 @@
   text-align: center;
   font-size: 18px;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
 }
 
@@ -608,9 +640,11 @@
   position: relative;
   width: 691px;
   height: 80px;
+  justify-content: center;
 }
 
 #testi .section-title {
+  justify-content: center;
   position: relative;
   width: 358px;
   top: -1px;
@@ -869,51 +903,15 @@
     color: rgba(255, 255, 255, 1);
   }
 
-  #home2 img {
-    width: 100%;
-    height: 100%;
+  #home1 #prev {
+    display: none;
   }
 
-  #home2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #home2 .headline-text {
-    font-family: "Montserrat";
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 25px;
-    letter-spacing: 0.20000000298023224px;
-    text-align: center;
-    position: absolute;
-    color: rgba(255, 255, 255, 1);
+  #home1 #next {
+    display: none;
   }
 
   #home1 img {
-    width: 100%;
-    height: 100%;
-  }
-
-  #home3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #home3 .headline-text {
-    font-family: "Montserrat";
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 25px;
-    letter-spacing: 0.20000000298023224px;
-    text-align: center;
-    position: absolute;
-    color: rgba(255, 255, 255, 1);
-  }
-
-  #home3 img {
     width: 100%;
     height: 100%;
   }
@@ -1128,106 +1126,6 @@
   }
 
   /* visimisi */
-  #visimisi1 {
-    padding: 3em 2em;
-    width: 100%;
-    height: auto;
-  }
-
-  #visimisi1 #left .box {
-    background: rgba(255, 255, 255, 1);
-    width: 3.5em;
-    height: 0.3em;
-  }
-
-  #visimisi1 #right .box {
-    background: rgba(255, 255, 255, 1);
-    width: 3.5em;
-    height: 0.3em;
-    display: flex;
-    justify-content: end;
-    align-content: end;
-    text-align: end;
-  }
-
-  #visimisi1 h2 {
-    font-family: "Montserrat";
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 50px;
-    letter-spacing: 0.20000000298023224px;
-    color: white;
-  }
-
-  #visimisi1 p {
-    font-family: "Montserrat";
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.20000000298023224px;
-    color: white;
-  }
-
-  #visimisi1 #left {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  #visimisi1 #left .col {
-    margin-top: 1em;
-    margin-bottom: 3em;
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0em;
-  }
-
-  #visimisi1 #right {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  #visimisi1 #right .col {
-    margin-top: 1em;
-    margin-bottom: 3em;
-    display: flex;
-    text-align: right;
-    align-items: end;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0em;
-  }
-
-  #visimisi1 img {
-    width: 50%;
-    height: 10%;
-  }
-
-  #visimisi1 .bg {
-    width: 30%;
-    height: 35%;
-    top: 0;
-    left: 2.7em;
-    position: relative;
-  }
-
-  #visimisi1 .bg1 {
-    width: 50%;
-    height: 35%;
-    top: 0;
-    left: -2.5em;
-    position: relative;
-  }
-
-  #visimisi1 .bg2 {
-    width: 32%;
-    height: 13%;
-    position: relative;
-    top: 5.5em;
-    left: 3em;
-  }
-
   #visimisi3 {
     padding: 3em 2em;
     width: 100%;
@@ -1302,6 +1200,32 @@
   #visimisi3 img {
     width: 50%;
     height: 10%;
+  }
+
+  #visimisi3 #prev {
+    display: none;
+  }
+
+  #visimisi3 #next {
+    display: none;
+  }
+
+  /* testi */
+  #testi .main-content {
+    display: flex;
+    margin-top: 30px;
+    position: relative;
+    width: 691px;
+    height: 80px;
+    justify-content: center;
+  }
+
+  #testi .section-title {
+    margin-left: 1.5em;
+  }
+
+  #testi .paragraph {
+    align-items: start;
   }
 
   /* products */
