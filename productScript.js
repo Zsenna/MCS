@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Navbar :
   const productNavItems = document.querySelectorAll('.products-nav-text');
   const pageControlContainer = document.getElementById('pageControl');
+  const footerItems = document.querySelectorAll('.flex-container p');
 
 
   let highlighted_nav = 'API';
@@ -131,6 +132,23 @@ document.addEventListener('DOMContentLoaded', function () {
               document.getElementById(associatedImageId).removeAttribute('hidden');
           }
       });
+  });
+
+  footerItems.forEach((footerItem) => {
+    footerItem.addEventListener('click', function () {
+      // Get the value of the custom attribute
+      const clickedNavItem = this.getAttribute('data-target');
+
+      // Find the corresponding navigation item
+      const correspondingNavItem = Array.from(productNavItems).find(
+        (navItem) => navItem.getAttribute('data-target') === clickedNavItem
+      );
+
+      // Trigger a click event on the corresponding navigation item
+      if (correspondingNavItem) {
+        correspondingNavItem.click();
+      }
+    });
   });
 
   let firstLoad = true;

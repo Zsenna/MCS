@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>MULTIBUANA CIPTA SEJAHTERA</title>
 
+    <!-- Products Data JSON : -->
+    <script src="productsData.js"></script>
+
     <link rel="icon" href="img\navbar-brand sec-.png">
 </head>
 
@@ -184,7 +187,7 @@
     <!-- end visi & misi -->
 
     <!-- Products : -->
-    <script src="productsData.js"></script>
+    
 
     <div id="boxp" class="box">
         <div id="prod" class="box">
@@ -198,21 +201,22 @@
                 <aside class="products-nav">
                     <div class="selected-nav-wrapper">
                         <img id="ApiImg" src="img/rizki/Product/RecangleNav.png">
-                        <p id="APINav" class="products-nav-text">API</p>
+                        <p id="APINav" class="products-nav-text" data-target="API">API</p>
                     </div>
                     <div class="selected-nav-wrapper">
                         <img id="expientImg" src="img/rizki/Product/RecangleNav.png" hidden>
-                        <p id="expinentNav" class="products-nav-text">EXIPIENT</p>
+                        <p id="expinentNav" class="products-nav-text" data-target="EXIPIENT">EXIPIENT</p>
                     </div>
                     <div class="selected-nav-wrapper">
                         <img id="extractImg" src="img/rizki/Product/RecangleNav.png" hidden>
-                        <p id="extractNav" class="products-nav-text">EXTRACT</p>
+                        <p id="extractNav" class="products-nav-text" data-target="EXTRACT">EXTRACT</p>
                     </div>
                     <div class="selected-nav-wrapper">
                         <img id="sterisImg" src="img/rizki/Product/RecangleNav.png" hidden>
-                        <p id="sterisNav" class="products-nav-text">STERIS</p>
+                        <p id="sterisNav" class="products-nav-text" data-target="STERIS">STERIS</p>
                     </div>
                 </aside>
+                
 
                 <main>
                     <div class="content-wrapper">
@@ -671,21 +675,23 @@
                         <a href="#visimisi3" style="color: white;  text-decoration: none;">About Us</a>
                     </div>
                     <div class="flex-container">
-                        <p class="one">Product</p>
+                        <p class="one" data-target="Product">Product</p>
                         <br>
-                        <P>Antibiotics</P>
-                        <p>Sulfonamides</p>
-                        <p>Steroids</p>
+                        <p data-target="API">API</p>
+                        <p data-target="EXIPIENT">Exipient</p>
+                        <p data-target="EXTRACT">Extract</p>
+                        <p data-target="STERIS">Steris</p>
                     </div>
+                    
                     <div class="flex-container">
                         <p class="one">Social Media</p>
                         <br>
                         <div class="SocialMedia">
-                            <img src="img\rizki\Footer\ant-design_facebook-filled.png" alt=""
+                            <img class="socialMediaIcon" src="img\rizki\Footer\ant-design_facebook-filled.png" alt=""
                                 style="margin-right: 0.5em;">
-                            <img src="img\rizki\Footer\ant-design_instagram-outlined.png" alt=""
+                            <img class="socialMediaIcon" src="img\rizki\Footer\ant-design_instagram-outlined.png" alt=""
                                 style="margin-right: 0.5em;">
-                            <img src="img\rizki\Footer\ant-design_twitter-outlined.png" alt=""
+                            <img class="socialMediaIcon" src="img\rizki\Footer\ant-design_twitter-outlined.png" alt=""
                                 style="margin-right: 0.5em;">
                         </div>
                     </div>
@@ -731,7 +737,7 @@
     <!-- end footer -->
 
 
-    <!-- script -->
+                                                            <!-- script -->
     <!-- Script Products : -->
     <script src="./productScript.js"></script>
     <!-- end script product -->
