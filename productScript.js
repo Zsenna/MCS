@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Navbar :
   const productNavItems = document.querySelectorAll('.products-nav-text');
   const pageControlContainer = document.getElementById('pageControl');
-  const footerItems = document.querySelectorAll('.flex-container p');
+  const footerItems = document.querySelectorAll('.flex-container a');
 
 
   let highlighted_nav = 'API';
