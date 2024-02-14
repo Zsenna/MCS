@@ -471,8 +471,10 @@
   z-index: 1;
   display: flex;
   transition-property: transform;
-  transition-timing-function: var(--swiper-wrapper-transition-timing-function,
-      initial);
+  transition-timing-function: var(
+    --swiper-wrapper-transition-timing-function,
+    initial
+  );
   box-sizing: content-box;
 }
 
@@ -692,7 +694,6 @@
 }
 
 @media (max-width: 1400px) {
-
   /* specialize1 */
   #specialize1 #kebijakan {
     display: flex;
@@ -777,7 +778,6 @@
 }
 
 @media (max-width: 1200px) {
-
   /* navbar */
   .navbar {
     width: 100%;
@@ -1170,7 +1170,6 @@
 }
 
 @media (max-width: 800px) {
-
   /* specialize1 */
   #specialize1 #kebijakan {
     display: flex;
@@ -1242,7 +1241,7 @@
 
 /* Products : */
 #boxp {
-  background-color: rgba(0, 82, 93);
+  background: linear-gradient(90deg, #3a8dde, #19428e);
 }
 
 #prod {
@@ -1273,7 +1272,7 @@
 }
 
 #produ {
-  background-color: #00525d;
+  background: linear-gradient(90deg, #3a8dde, #19428e);
 }
 
 #products {
@@ -1620,7 +1619,7 @@ li {
 
 /* Contact Us : */
 #boxcontact {
-  background-color: #00525d;
+  background: linear-gradient(90deg, #3a8dde, #19428e);
 }
 
 .frame {
@@ -1916,7 +1915,8 @@ li {
   top: 187px;
 }
 
-@media screen and (max-width: 1000px) {}
+@media screen and (max-width: 1000px) {
+}
 
 /* .contact-us {
   display: flex;
@@ -2045,7 +2045,6 @@ input[type="submit"] {
 }
 
 @media screen and (max-width: 1000px) {
-
   /* @media for Footer : */
   #footer .container-footer {
     background-color: #00525d;
